@@ -1,6 +1,5 @@
-public class Card {
-    public static final String cardType;
+public interface Card extends Character, Weapon, Room {
+    public String cardType = null;
 
-    public final void getCardType() {
-    }
+
 }

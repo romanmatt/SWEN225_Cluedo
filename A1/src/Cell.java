@@ -1,2 +1,4 @@
-public interface Cell extends RoomCell, HallwayCell, DoorCell {
+public interface Cell {
+    int getXPos = 0;
+    int getYPos = 0;
 }

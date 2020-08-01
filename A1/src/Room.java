@@ -1,2 +1,3 @@
-public enum Room {
+interface Room {
+    RoomType weapon = null;
 }
