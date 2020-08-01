@@ -1,3 +1,3 @@
-interface Weapon {
+interface CardWeapon {
     WeaponType weapon = null;
 }

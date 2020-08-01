@@ -1,3 +1,3 @@
-interface Room {
-    RoomType weapon = null;
+interface CardRoom {
+    RoomType room = null;
 }
