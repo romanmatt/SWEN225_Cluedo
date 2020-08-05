@@ -1,3 +1,3 @@
-class RoomCard {
+class RoomCard implements Card {
     RoomType room = null;
 }
