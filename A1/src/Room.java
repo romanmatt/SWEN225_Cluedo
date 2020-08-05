@@ -1,10 +1,15 @@
 class Room {
   private ArrayList<Cell> cells; // The cells of the board that make up this room
+  private ArrayList<Cell> doors; // The door cells this room uses for movement calculations 
   private ArrayList<Player> players; // The players currently in this room 
   private ArrayList<Weapon> weapons; // The weapon piece currently in this room
   
   public ArrayList<Cell> getCells() {
     return cells;
+  }
+  
+  public ArrayList<Cell> getDoors() {
+    return doors;
   }
   
   public ArrayList<Player> getPlayers() {
