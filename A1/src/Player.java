@@ -1,17 +1,23 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Player {
     private CharacterType playersCharacter;
     private RoomCell playersRoom;
     private boolean isStillPlaying;
-    private HashSet <Card> playersHand = new HashSet<>();
+    private ArrayList <Card> playersHand = new ArrayList<>();
     String notes = ""; //Any extra notes for the player
 
     /* Constructor for the Player object */
     public Player(CharacterType character){
         this.playersCharacter = character;
         isStillPlaying = true;
+    }
+
+    /* Helper methods */
+
+
+    public CharacterType getName(){
+        return this.playersCharacter;
     }
 
 
