@@ -1,3 +1,3 @@
-class CharacterCard {
+class CharacterCard implements Card {
     CharacterType character = null;
 }
