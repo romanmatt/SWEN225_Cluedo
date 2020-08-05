@@ -1,9 +1,14 @@
 public class Board {
     private static java.util.Map playerMap;
-    private String[][] grid;
+    private Cell[][] board;
 
     public final String draw() {
         return null;
+    }
+    
+    public Board() {
+         
+        
     }
     
     // Checks if a player can make their desired move
