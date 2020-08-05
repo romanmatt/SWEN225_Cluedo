@@ -1,4 +1,4 @@
-public interface Card extends Character, CardWeapon, CardRoom, CardCharacter {
+public interface Card {
     public String cardType = null;
 
 
