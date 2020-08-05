@@ -1,3 +1,3 @@
-interface CardRoom {
+class RoomCard {
     RoomType room = null;
 }
