@@ -1,3 +1,3 @@
-interface CardCharacter {
+class CharacterCard {
     CharacterType character = null;
 }
