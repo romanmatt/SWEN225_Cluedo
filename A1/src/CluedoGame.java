@@ -31,32 +31,81 @@ public class CluedoGame {
 
     /**
      * userInput() takes care of the user's text input
-     * on choice of number of players, what player they wish to play
+     * on what player they wish to play
+     * @param input
      * */
-    private int userInput() {
+    public static String userInput() {
+        String input = new String();
         Scanner sc = new Scanner(System.in);
-        int num;
         try{
-            System.out.println("CLUEDO: TEXT-BASED GUI DESKTOP VERSION.\n" +
-                    "PLEASE ENTER NUMBER OF PLAYERS BETWEEN [3-6] FOR THE GAME: \n" +
-                    "INPUT EXAMPLE: 4 "
+            System.out.println(
+                    "CLUEDO: TEXT-BASED TUI DESKTOP VERSION.\n" +
+                    "PLAYERS:\n"+
+                    "S - MISS SCARLETT \n"+
+                    "M - COLONEL MUSTARD\n"+
+                    "W - MRS. WHITE\n"+
+                    "G - MR. GREEN\n"+
+                    "E - MRS. PEACOCK\n"+
+                    "P - PROFESSOR PLUM\n"+
+                    "PLEASE ENTER CHARACTERS THAT YOU WOULD LIKE TO PLAY IN THE GAME BETWEEN 3-6.\n" +
+                    "INPUT EXAMPLE: \"E-P-M\" "
             );
-            num = sc.nextInt();
-            if(num<3 || num>6 ){
-                throw new IllegalArgumentException("NOT A VALID NUMBER! PLEASE ENTER NUMBER FROM 3-6.");
-            }
+            input = sc.nextLine();
         }
         catch(Error e) {
-            System.out.println("ERROR: " + e);
+            System.out.println("ERROR:NOT A VALID INPUT! PLEASE ENTER CHARACTERS BETWEEN 3-6 PLAYERS " + e);
         }
+        return input;
+    }
+
+    /**
+     * Helper Method for userInput()
+     * called isInputValid() which goes through
+     * the string input
+     * @return false
+     * */
+    private boolean isInputValid(String str){
+        String [] token = str.split("-");
+        for(int i =0; i<token.length; i++){
+            if(token[i+1].equals(" ")|| i== (token.length-1)){
+
+                Player player;
+
+                //Check to see what token is in input
+
+                //Scarlett
+                if(token[i].equals("S")){
+                    player = new Player(CharacterType.MissScarlett);
+                }
+                //Mustard
+                else if(token[i].equals("M")){
+                    player = new Player(CharacterType.ColonelMustard);
+                }
+                //White
+                else if(token[i].equals("W")){
+                    player = new Player(CharacterType.MrsWhite);
+                }
+                //Green
+                else if(token[i].equals("G")){
+                    player = new Player(CharacterType.MrGreen);
+                }
+                //Peaacock
+                else if(token[i].equals("E")){
+                    player = new Player(CharacterType.MrsPeacock);
+                }
+                //Plum
+                else if(token[i].equals("P")){
+                    player = new Player(CharacterType.ProfessorPlum);
+                }
+                else{
+                    System.out.println("ERROR: INVALID INPUT." + token[i]);
+                }
 
 
+            }
         }
-
-
-
-
-
+        return false;
+    }
 
 
     /**
