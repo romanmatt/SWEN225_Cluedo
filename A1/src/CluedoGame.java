@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class CluedoGame {
@@ -89,7 +90,7 @@ public class CluedoGame {
                 else if(token[i].equals("G")){
                     player = new Player(CharacterType.MrGreen);
                 }
-                //Peaacock
+                //Peacock
                 else if(token[i].equals("E")){
                     player = new Player(CharacterType.MrsPeacock);
                 }
@@ -98,13 +99,25 @@ public class CluedoGame {
                     player = new Player(CharacterType.ProfessorPlum);
                 }
                 else{
-                    System.out.println("ERROR: INVALID INPUT." + token[i]);
+                    throw new IllegalArgumentException("ERROR: INVALID INPUT." + token[i]);
+                    return false;
                 }
 
+                activePlayers.add(player);
 
+                for(Player p: activePlayers){
+                    if(p.equals(player)){
+                        System.out.print("ERROR: CANNOT DUPLICATE SAME PLAYERS");
+                        return false;
+                    }
+                }
+            }
+            else{
+                System.out.print("ERROR: MUST BE SEPARATED BY '-' ");
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 
