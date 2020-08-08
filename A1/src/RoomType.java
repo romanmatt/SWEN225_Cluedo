@@ -1,3 +1,6 @@
+/**
+ * Room Enum
+ */
 public enum RoomType {
     BALLROOM {public String toString(){return "A";}} ,
     CONSERVATORY {public String toString(){return "C";}},
