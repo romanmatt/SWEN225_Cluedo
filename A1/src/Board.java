@@ -6,7 +6,34 @@ public class Board {
     }
     
     public Board() {
-         
+	    
+         String initialCellBoard = "" +
+                "abcdefghijklmnopqrstuvwx" +
+                ".........W....G........." +
+                "KKKKKK....AAAA....CCCCCC" +
+                "KKKKKK..AAAAAAAA..CCCCCC" +
+                "KKKKKK..AAAAAAAA..CCCCCC"+
+                "KKKKKK..AAAAAAAA..+CCCCC"+
+                "KKKKKK..+AAAAAA+...CCCC."+
+                ".KKKK+..AAAAAAAA........"+
+                "........A+AAAA+A.......E"+
+                "..................BBBBBB"+
+                "DDDDDDDD..........+BBBBB"+
+                "DDDDDDDD..........BBBBBB"+
+                "DDDDDDD...........BBBBBB"+
+                "DDDDDDDD..........BBBB+B"+
+                "DDDDDDDD................"+
+                "DDDDDDDD..........LL+LL."+
+                "DDDDDD+D.........LLLLLLL"+
+                ".................+LLLLLL"+
+                "M................LLLLLLL"+
+                ".........HH++HH...LLLLL."+
+                "OOOOOO+..HHHHHH........P"+
+                "OOOOOOO..HHHHH+........."+
+                "OOOOOOO..HHHHHH..+SSSSSS"+
+                "OOOOOOO..HHHHHH..SSSSSSS"+
+                "OOOOOOO..HHHHHH..SSSSSSS"+
+                "OOOOOO.R.HHHHHH...SSSSSS";
         
     }
     
