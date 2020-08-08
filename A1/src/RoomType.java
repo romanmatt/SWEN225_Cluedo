@@ -1,5 +1,5 @@
 public enum RoomType {
-     BALLROOM {public String toString(){return "A";}} ,
+    BALLROOM {public String toString(){return "A";}} ,
     CONSERVATORY {public String toString(){return "C";}},
     BILLIARD {public String toString(){return "B";}} ,
     LIBRARY {public String toString(){return "L";}} ,
