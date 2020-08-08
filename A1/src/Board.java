@@ -1,39 +1,49 @@
 public class Board {
     private Cell[][] board;
+    Room ballroom;
+    Room conservatory;
+    Room billiardRoom;
+    Room library;
+    Room study;
+    Room hall;
+    Room lounge;
+    Room diningRoom;
+    Room kitchen;
+    
+    String initialCellBoard = "" +
+            "abcdefghijklmnopqrstuvwx" +
+            ".........W....G........." +
+            "KKKKKK....AAAA....CCCCCC" +
+            "KKKKKK..AAAAAAAA..CCCCCC" +
+            "KKKKKK..AAAAAAAA..CCCCCC"+
+            "KKKKKK..AAAAAAAA..+CCCCC"+
+            "KKKKKK..+AAAAAA+...CCCC."+
+            ".KKKK+..AAAAAAAA........"+
+            "........A+AAAA+A.......E"+
+            "..................BBBBBB"+
+            "DDDDDDDD..........+BBBBB"+
+            "DDDDDDDD..........BBBBBB"+
+            "DDDDDDD...........BBBBBB"+
+            "DDDDDDDD..........BBBB+B"+
+            "DDDDDDDD................"+
+            "DDDDDDDD..........LL+LL."+
+            "DDDDDD+D.........LLLLLLL"+
+            ".................+LLLLLL"+
+            "M................LLLLLLL"+
+            ".........HH++HH...LLLLL."+
+            "OOOOOO+..HHHHHH........P"+
+            "OOOOOOO..HHHHH+........."+
+            "OOOOOOO..HHHHHH..+SSSSSS"+
+            "OOOOOOO..HHHHHH..SSSSSSS"+
+            "OOOOOOO..HHHHHH..SSSSSSS"+
+            "OOOOOO.R.HHHHHH...SSSSSS";
 
     public final String draw() {
         return null;
     }
     
     public Board() {
-	    
-         String initialCellBoard = "" +
-                "abcdefghijklmnopqrstuvwx" +
-                ".........W....G........." +
-                "KKKKKK....AAAA....CCCCCC" +
-                "KKKKKK..AAAAAAAA..CCCCCC" +
-                "KKKKKK..AAAAAAAA..CCCCCC"+
-                "KKKKKK..AAAAAAAA..+CCCCC"+
-                "KKKKKK..+AAAAAA+...CCCC."+
-                ".KKKK+..AAAAAAAA........"+
-                "........A+AAAA+A.......E"+
-                "..................BBBBBB"+
-                "DDDDDDDD..........+BBBBB"+
-                "DDDDDDDD..........BBBBBB"+
-                "DDDDDDD...........BBBBBB"+
-                "DDDDDDDD..........BBBB+B"+
-                "DDDDDDDD................"+
-                "DDDDDDDD..........LL+LL."+
-                "DDDDDD+D.........LLLLLLL"+
-                ".................+LLLLLL"+
-                "M................LLLLLLL"+
-                ".........HH++HH...LLLLL."+
-                "OOOOOO+..HHHHHH........P"+
-                "OOOOOOO..HHHHH+........."+
-                "OOOOOOO..HHHHHH..+SSSSSS"+
-                "OOOOOOO..HHHHHH..SSSSSSS"+
-                "OOOOOOO..HHHHHH..SSSSSSS"+
-                "OOOOOO.R.HHHHHH...SSSSSS";
+         
         
     }
     
@@ -114,39 +124,39 @@ public class Board {
 	}
 
 	private Cell parseKitchen(int x, int y) {
-		return new RoomCell(x, y, RoomType.KITCHEN);
+		return new RoomCell(x, y, RoomType.KITCHEN, this);
 	}
 
 	private Cell parseDiningRoom(int x, int y) {
-		return new RoomCell(x, y, RoomType.DININGROOM);
+		return new RoomCell(x, y, RoomType.DININGROOM, this);
 	}
 
 	private Cell parseLounge(int x, int y) {
-		return new RoomCell(x, y, RoomType.LOUNGE);
+		return new RoomCell(x, y, RoomType.LOUNGE, this);
 	}
 
 	private Cell parseHall(int x, int y) {
-		return new RoomCell(x, y, RoomType.HALL);
+		return new RoomCell(x, y, RoomType.HALL, this);
 	}
 
 	private Cell parseStudy(int x, int y) {
-		return new RoomCell(x, y, RoomType.STUDY);
+		return new RoomCell(x, y, RoomType.STUDY, this);
 	}
 
 	private Cell parseLibrary(int x, int y) {
-		return new RoomCell(x, y, RoomType.LIBRARY);
+		return new RoomCell(x, y, RoomType.LIBRARY, this);
 	}
 
 	private Cell parseBilliardRoom(int x, int y) {
-		return new RoomCell(x, y, RoomType.BILLIARDROOM);
+		return new RoomCell(x, y, RoomType.BILLIARDROOM, this);
 	}
 
 	private Cell parseConservatory(int x, int y) {
-		return new RoomCell(x, y, RoomType.CONSERVATORY);
+		return new RoomCell(x, y, RoomType.CONSERVATORY, this);
 	}
 
 	private Cell parseBallroom(int x, int y) {
-		return new RoomCell(x, y, RoomType.BALLROOM);
+		return new RoomCell(x, y, RoomType.BALLROOM, this);
 	}
 
 	// Checks if a player can make their desired move
