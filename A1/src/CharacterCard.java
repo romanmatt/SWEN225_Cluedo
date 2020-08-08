@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class CharacterCard implements Card {
     CharacterType character;
 
@@ -11,10 +13,30 @@ public class CharacterCard implements Card {
         return this.character;
     }
 
-    /* Deletes selected character */
-    public void delete(){
 
+
+    public boolean equals(Object o){
+        //checking if o is null
+        if(o == null){
+            return false;
+        }
+
+        //checking if o is equal to this class
+        if(getClass() != o.getClass()){
+            return false;
+        }
+        CharacterCard other = (CharacterCard) o;
+        return this.character == other.character;
     }
+
+   public String getCharacterName() {
+       return this.character.toString();
+   }
+   
+
+   public void delete(){
+
+   }
 
 
 }
