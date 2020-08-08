@@ -147,7 +147,7 @@ public class Board {
 		return new RoomCell(x, y, RoomType.LIBRARY, this);
 	}
 
-	private Cell parseBilliarD(int x, int y) {
+	private Cell parseBilliard(int x, int y) {
 		return new RoomCell(x, y, RoomType.BILLIARD, this);
 	}
 
