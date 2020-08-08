@@ -5,5 +5,9 @@ class RoomCard implements Card {
         this.room = room;   
     }
     
+    public RoomType getRoom() {
+        return this.room;
+    }
+    
     
 }
