@@ -2,12 +2,12 @@ public class Board {
     private Cell[][] board;
     Room ballroom;
     Room conservatory;
-    Room billiardRoom;
+    Room billiard;
     Room library;
     Room study;
     Room hall;
     Room lounge;
-    Room diningRoom;
+    Room dining;
     Room kitchen;
     
     String initialCellBoard = "" +
@@ -86,7 +86,7 @@ public class Board {
     		return parseConservatory(x, y);
     	}
     	if (cell == 'B') {
-    		return parseBilliardRoom(x, y);
+    		return parseBilliard(x, y);
     	}
     	if (cell == 'L') {
     		return parseLibrary(x, y);
@@ -101,7 +101,7 @@ public class Board {
     		return parseLounge(x, y);
     	}
     	if (cell == 'D') {
-    		return parseDiningRoom(x, y);
+    		return parseDining(x, y);
     	}
     	if (cell == 'K') {
     		return parseKitchen(x, y);
@@ -127,8 +127,8 @@ public class Board {
 		return new RoomCell(x, y, RoomType.KITCHEN, this);
 	}
 
-	private Cell parseDiningRoom(int x, int y) {
-		return new RoomCell(x, y, RoomType.DININGROOM, this);
+	private Cell parseDining(int x, int y) {
+		return new RoomCell(x, y, RoomType.DINING, this);
 	}
 
 	private Cell parseLounge(int x, int y) {
@@ -147,8 +147,8 @@ public class Board {
 		return new RoomCell(x, y, RoomType.LIBRARY, this);
 	}
 
-	private Cell parseBilliardRoom(int x, int y) {
-		return new RoomCell(x, y, RoomType.BILLIARDROOM, this);
+	private Cell parseBilliarD(int x, int y) {
+		return new RoomCell(x, y, RoomType.BILLIARD, this);
 	}
 
 	private Cell parseConservatory(int x, int y) {
