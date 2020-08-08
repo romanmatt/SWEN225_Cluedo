@@ -1,4 +1,21 @@
+
 public class DoorCell implements Cell {
-    public int xPos;
-    public int yPos;
+
+	private int x;
+	private int y;
+	private Room room;
+	
+	public DoorCell(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+
 }
