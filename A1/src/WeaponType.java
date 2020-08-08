@@ -1,12 +1,11 @@
-
-
+/**
+ * Weapon Enum
+ */
 public enum WeaponType {
-    CandleStick {public String toString(){return "Candlestick";}} ,
-    Dagger {public String toString(){return "Dagger";}} ,
-    LeadPipe {public String toString(){return "Lead Pipe";}} ,
-    Revolver {public String toString(){return "Revolver";}} ,
-    Rope {public String toString(){return "Rope";}} ,
-    Spanner  {public String toString(){return "Spanner";}}
+    CANDLESTICK {public String toString(){return "Candlestick";}},
+    DAGGER      {public String toString(){return "Dagger";}},
+    LEADPIPE    {public String toString(){return "Lead Pipe";}},
+    REVOLVER    {public String toString(){return "Revolver";}},
+    ROPER       {public String toString(){return "Rope";}},
+    SPANNER     {public String toString(){return "Spanner";}},
 }
-
-
