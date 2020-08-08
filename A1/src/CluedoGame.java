@@ -27,7 +27,14 @@ public class CluedoGame {
      * responsible for the text GUI of the game
      * */
     public void run(){
-        userInput();
+
+        while(true){
+            String input = userInput();
+            if(isInputValid(input)){
+                break;
+            }
+        }
+
     }
 
     /**
@@ -49,7 +56,7 @@ public class CluedoGame {
                     "E - MRS. PEACOCK\n"+
                     "P - PROFESSOR PLUM\n"+
                     "PLEASE ENTER CHARACTERS THAT YOU WOULD LIKE TO PLAY IN THE GAME BETWEEN 3-6.\n" +
-                    "INPUT EXAMPLE: \"E-P-M\" "
+                    "INPUT EXAMPLE: \"G-P-M\" "
             );
             input = sc.nextLine();
         }
@@ -73,7 +80,6 @@ public class CluedoGame {
                 Player player;
 
                 //Check to see what token is in input
-
                 //Scarlett
                 if(token[i].equals("S")){
                     player = new Player(CharacterType.MissScarlett);
@@ -99,8 +105,8 @@ public class CluedoGame {
                     player = new Player(CharacterType.ProfessorPlum);
                 }
                 else{
-                    throw new IllegalArgumentException("ERROR: INVALID INPUT." + token[i]);
-                    return false;
+                    System.out.print("ERROR: INVALID INPUT.");
+                        return false;
                 }
 
                 activePlayers.add(player);
