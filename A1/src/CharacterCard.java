@@ -1,18 +1,31 @@
-public class CharacterCard implements Card {
-    CharacterType character;
-
-    /* Constructor */
-    public CharacterCard(CharacterType character) {
-        this.character = character;
+/**
+ * Character cards
+ * Contains character card methods
+ */
+class CharacterCard implements Card {
+    CharacterType character = null;
+    
+    /** Constructor */
+    public CharacterCard (CharacterType character){
+        this.character = character;   
     }
-
-
+    
+    /** Setter */
+    public CharacterType setCharacter (CharacterType character){
+        this.character = character;   
+    }
+    
+    /** Getter */
     public CharacterType getCharacter() {
         return this.character;
     }
 
+    /** Remove */
+    public CharacterType removeCharacter() {
+        this.character = null;
+    }
 
-
+    /** Equals */
     public boolean equals(Object o){
         //checking if o is null
         if(o == null){
@@ -23,18 +36,8 @@ public class CharacterCard implements Card {
         if(getClass() != o.getClass()){
             return false;
         }
+
         CharacterCard other = (CharacterCard) o;
         return this.character == other.character;
     }
-
-   public String getCharacterName() {
-       return this.character.toString();
-   }
-   
-
-   public void delete(){
-
-   }
-
-
 }
