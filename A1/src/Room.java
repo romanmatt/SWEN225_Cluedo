@@ -12,6 +12,10 @@ class Room {
     return doors;
   }
   
+  public void addCell(RoomCell cell) {
+		cells.add(cell);
+	}
+  
   public ArrayList<Character> getCharacters() {
     return characters;
   }
