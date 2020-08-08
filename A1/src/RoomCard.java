@@ -37,7 +37,7 @@ class RoomCard implements Card {
             return false;
         }
 
-        CharacterCard other = (CharacterCard) o;
-        return this.character == other.character;
+        RoomCard other = (RoomCard) o;
+        return this.room == other.room;
     }
 }
