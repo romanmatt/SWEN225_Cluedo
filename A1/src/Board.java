@@ -11,32 +11,31 @@ public class Board {
     Room kitchen;
 
     String initialCellBoard =
-
-            ".........W....G........." +
-            "KKKKKK....AAAA....CCCCCC" +
-            "KKKKKK..AAAAAAAA..CCCCCC" +
-            "KKKKKK..AAAAAAAA..CCCCCC"+
-            "KKKKKK..AAAAAAAA..+CCCCC"+
-            "KKKKKK..+AAAAAA+...CCCC."+
-            ".KKKK+..AAAAAAAA........"+
-            "........A+AAAA+A.......E"+
-            "..................BBBBBB"+
-            "DDDDDDDD..........+BBBBB"+
-            "DDDDDDDD..........BBBBBB"+
-            "DDDDDDD...........BBBBBB"+
-            "DDDDDDDD..........BBBB+B"+
-            "DDDDDDDD................"+
-            "DDDDDDDD..........LL+LL."+
-            "DDDDDD+D.........LLLLLLL"+
-            ".................+LLLLLL"+
-            "M................LLLLLLL"+
-            ".........HH++HH...LLLLL."+
-            "OOOOOO+..HHHHHH........P"+
-            "OOOOOOO..HHHHH+........."+
-            "OOOOOOO..HHHHHH..+SSSSSS"+
-            "OOOOOOO..HHHHHH..SSSSSSS"+
-            "OOOOOOO..HHHHHH..SSSSSSS"+
-            "OOOOOO.R.HHHHHH...SSSSSS";
+                    ".........W....G........./n" +
+                    "KKKKKK....AAAA....CCCCCC/n" +
+                    "KKKKKK..AAAAAAAA..CCCCCC/n" +
+                    "KKKKKK..AAAAAAAA..CCCCCC/n"+
+                    "KKKKKK..AAAAAAAA..+CCCCC/n"+
+                    "KKKKKK..+AAAAAA+...CCCC./n"+
+                    ".KKKK+..AAAAAAAA......../n"+
+                    "........A+AAAA+A.......E/n"+
+                    "..................BBBBBB/n"+
+                    "DDDDDDDD..........+BBBBB/n"+
+                    "DDDDDDDD..........BBBBBB/n"+
+                    "DDDDDDD...........BBBBBB/n"+
+                    "DDDDDDDD..........BBBB+B/n"+
+                    "DDDDDDDD................/n"+
+                    "DDDDDDDD..........LL+LL./n"+
+                    "DDDDDD+D.........LLLLLLL/n"+
+                    ".................+LLLLLL/n"+
+                    "M................LLLLLLL/n"+
+                    ".........HH++HH...LLLLL./n"+
+                    "OOOOOO+..HHHHHH........P/n"+
+                    "OOOOOOO..HHHHH+........./n"+
+                    "OOOOOOO..HHHHHH..+SSSSSS/n"+
+                    "OOOOOOO..HHHHHH..SSSSSSS/n"+
+                    "OOOOOOO..HHHHHH..SSSSSSS/n"+
+                    "OOOOOO.R.HHHHHH...SSSSSS/n";
 
     public final String draw() {
         return null;
