@@ -14,11 +14,13 @@ public class Accusation {
 
 public boolean checkAccusation(Player player){
         for(int i = 0; i < 6; i++){
-            System.out.println(); //temporary
 
-            //if the accused weapon, character and room matches the murderer's
-            //game stops
-            //player can no longer play
+            //this is temporary
+            System.out.println();
+            player.setIsStillPlaying(false);
+            System.out.println("Player " + player.getName() + " is out!");
+            return false;
+
         }
 
 
