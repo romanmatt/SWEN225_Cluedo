@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class CharacterCard implements Card {
     CharacterType character;
 
