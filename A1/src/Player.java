@@ -45,7 +45,27 @@ public class Player {
     	return hand;
     }
 
-
+     public String toString() {
+    	if (playersCharacter == CharacterType.COLONELMUSTARD) {
+    		return "Colonel Mustard";
+    	}
+    	if (playersCharacter == CharacterType.MISSSCARLET) {
+    		return "Miss Scarlet";
+    	}
+    	if (playersCharacter == CharacterType.MRSWHITE) {
+    		return "Mrs White";
+    	}
+    	if (playersCharacter == CharacterType.MRGREEN) {
+    		return "Mr Green";
+    	}
+    	if (playersCharacter == CharacterType.MRSPEACOCK) {
+    		return "Mrs Peacock";
+    	}
+    	if (playersCharacter == CharacterType.PROFESSORPLUM) {
+    		return "Professor Plum";
+    	}
+    	return "[Player name not found]";
+    }
     //Not needed but will remain just in case
 
     /**
