@@ -18,6 +18,15 @@ public class HallwayCell implements Cell {
 		return y;
 	}
 	
+	public boolean placePlayer(Player p) {
+		if (player == null) {
+			player = p;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public boolean isOccupied() {
 		if (player != null) {
 			return true;
