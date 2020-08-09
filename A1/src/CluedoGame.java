@@ -216,9 +216,13 @@ public class CluedoGame {
             //----------------------------------------------
             if (input.equals("A")) {
                 // Make an accusation
-                 validInput = false;
+                validAcc    = false;
+                validRoom   = false;
+                validWeapon = false;
+                validChar   = false;
                 
-                while (!validInput) {
+                //check valid input
+                while (!validAcc) {
                     System.out.println(player.toString() + " is making an accusation");
                     RoomType accusedRoom;
                     WeaponType accusedWeapon;
@@ -233,9 +237,9 @@ public class CluedoGame {
                     }
                     
                 s.close();
-                
+                    
+                //if accusation is right call win 
                 Accusation accusation = new Accusation(accusedRoom,accusedWeapon,accusedCharacter);
-                //if accusation is right call win    
                 if(accuse(accusation)){
                     win(player);
                 }
