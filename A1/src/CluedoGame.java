@@ -158,11 +158,11 @@ public class CluedoGame {
             // Move the player
             int steps = rollDiceGenerator();
             System.out.println(player.toString() + " has rolled a " + steps);
-            
             String input = "";
             boolean validInput = false;
+            
             while (!validInput) {
-            System.out.println(player.toString() + " would you like to move? (Y/N)");
+            System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
             Scanner s = new Scanner(System.in);
             input = s.next();
             if (input.equals("Y") || input.equals("N")) {
