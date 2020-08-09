@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 class Room {
-    private ArrayList<Cell> cells; // The cells of the board that make up this room
-    private ArrayList<DoorCell> doors; // The door cells this room uses for movement calculations
-    private ArrayList<Character> characters; // The players currently in this room
-    private ArrayList<WeaponType> weapons; // The weapon piece currently in this room
+    private ArrayList<Cell> cells = new ArrayList<Cell>(); // The cells of the board that make up this room
+    private ArrayList<DoorCell> doors = new ArrayList<DoorCell>(); // The door cells this room uses for movement calculations
+    private ArrayList<Character> characters = new ArrayList<Character>(); // The players currently in this room
+    private ArrayList<WeaponType> weapons = new ArrayList<WeaponType>(); // The weapon piece currently in this room
 
     public ArrayList<Cell> getCells() {
         return cells;
