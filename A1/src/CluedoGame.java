@@ -241,7 +241,9 @@ public class CluedoGame {
      * Ends game and calls win screen
      */
     public void win(Player player){
-        
+        System.out.println(player.toString() + " has won!");
+        System.out.println(player.toString() + " has correctly accused the perpetrator " + solutionCharacter.toString());
+        System.out.println( " who used a " +  solutionWeapon.toString() + " in " +  solutionRoom.toString());
     }
 
     /**
