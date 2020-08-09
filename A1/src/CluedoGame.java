@@ -177,6 +177,7 @@ public class CluedoGame {
                     else{
                         System.out.println("Please enter a valid coordinate.");
                     }
+                    
                 } else {
                     System.out.println("Please enter a valid coordinate.");
                 }
