@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Board {
-    private Cell[][] board;
+    public Cell[][] board;
     Room ballroom;
     Room conservatory;
     Room billiard;
