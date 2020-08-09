@@ -164,13 +164,15 @@ public class CluedoGame {
             while (!validInput) {
             System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
             Scanner s = new Scanner(System.in);
-            int xCor = s.next();
-            int yCor = s.next();
+            int xCor;
+            int yCor;
                 
-            if (input.equals("Y") || input.equals("N")) {
+            if (s.hasNextInt() && s.hasNextInt()) {
+                xCor = s.next();
+                yCor = s.next();
                 validInput = true;
             } else {
-                System.out.println("Please enter Y or N.");
+                System.out.println("Please enter a valid coordinate.");
             }
             s.close();
         }
