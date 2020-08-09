@@ -129,7 +129,7 @@ public class Board {
 
     public Cell[][] parseBoard(String textBoard) {
         char[] text = textBoard.toCharArray();
-        Cell board[][] = new Cell[25][24];
+        Cell board[][] = new Cell[25][26];
         int x = 0;
         int y = 0;
         for (char c : text) {
