@@ -171,7 +171,7 @@ public class CluedoGame {
                     xCor = s.next();
                     yCor = s.next();
                     
-                    if(xCor<25 && yCor<24){
+                    if(xCor<26 && yCor<25){
                         validInput = true;
                     }
                     else{
