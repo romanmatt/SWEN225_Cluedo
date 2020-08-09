@@ -13,16 +13,16 @@ public class Board {
     Room dining;
     Room kitchen;
 
-    String initialCellBoard =
+     String initialCellBoard =
 
-    		 ".........W....G.........\n" +
+    		 "........................\n" +
     		            "KKKKKK....AAAA....CCCCCC\n" +
     		            "KKKKKK..AAAAAAAA..CCCCCC\n" +
     		            "KKKKKK..AAAAAAAA..CCCCCC\n"+
     		            "KKKKKK..AAAAAAAA..+CCCCC\n"+
     		            "KKKKKK..+AAAAAA+...CCCC.\n"+
     		            ".KKKK+..AAAAAAAA........\n"+
-    		            "........A+AAAA+A.......E\n"+
+    		            "........A+AAAA+A........\n"+
     		            "..................BBBBBB\n"+
     		            "DDDDDDDD..........+BBBBB\n"+
     		            "DDDDDDDD..........BBBBBB\n"+
@@ -32,14 +32,14 @@ public class Board {
     		            "DDDDDDDD..........LL+LL.\n"+
     		            "DDDDDD+D.........LLLLLLL\n"+
     		            ".................+LLLLLL\n"+
-    		            "M................LLLLLLL\n"+
+    		            ".................LLLLLLL\n"+
     		            ".........HH++HH...LLLLL.\n"+
-    		            "OOOOOO+..HHHHHH........P\n"+
+    		            "OOOOOO+..HHHHHH.........\n"+
     		            "OOOOOOO..HHHHH+.........\n"+
     		            "OOOOOOO..HHHHHH..+SSSSSS\n"+
     		            "OOOOOOO..HHHHHH..SSSSSSS\n"+
     		            "OOOOOOO..HHHHHH..SSSSSSS\n"+
-    		            "OOOOOO.R.HHHHHH...SSSSSS\n";
+    		            "OOOOOO...HHHHHH...SSSSSS\n";
 
     public final String draw() {
         return null;
