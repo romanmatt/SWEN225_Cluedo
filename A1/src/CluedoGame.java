@@ -219,7 +219,11 @@ public class CluedoGame {
                  validInput = false;
                 
                 while (!validInput) {
-                    System.out.println(player.toString() + " would you like to make a suggestion (S) or accusation (A)?");
+                    System.out.println(player.toString() + " is making an accusation");
+                    RoomType accusedRoom;
+                    WeaponType accusedWeapon;
+                    CharacterType accusedCharacter;
+                    
                     Scanner s = new Scanner(System.in);
                     input = s.next();
                     if (input.equals("S") || input.equals("A")) {
@@ -230,8 +234,8 @@ public class CluedoGame {
                     
                 s.close();
                 
-                Accusation accusation = new Accusation();
-                    
+                Accusation accusation = new Accusation(accusedRoom,accusedWeapon,accusedCharacter);
+                //if accusation is right call win    
                 if(accuse(accusation)){
                     win(player);
                 }
