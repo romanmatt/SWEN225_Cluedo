@@ -228,14 +228,25 @@ public class CluedoGame {
                     WeaponType accusedWeapon;
                     CharacterType accusedCharacter;
                     
+                    while (!validRoom) {
+                        
+                    }
+                        
+                    while (!validWeapon) {
+                        
+                    }
+                            
+                    while (!validChar) {
+                        
+                    }
+                                
                     Scanner s = new Scanner(System.in);
                     input = s.next();
                     if (input.equals("S") || input.equals("A")) {
                         validInput = true;
                     } else {
                         System.out.println("Please enter S or A.");
-                    }
-                    
+                    } 
                     s.close();
                     
                     
