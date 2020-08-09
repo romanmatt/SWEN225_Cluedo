@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Random; //added this for picking murder set
 
 public class CluedoGame {
     private static boolean isGameOver;
@@ -232,50 +233,51 @@ public class CluedoGame {
      * */
 
     private void setupCards() {
-    	ArrayList<Card> remainingDeck = new ArrayList<Card>();
-    	ArrayList<RoomCard> roomDeck = new ArrayList<RoomCard>();
-    	roomDeck.add(new RoomCard(RoomType.BALLROOM));
-    	roomDeck.add(new RoomCard(RoomType.CONSERVATORY));
-    	roomDeck.add(new RoomCard(RoomType.BILLIARD));
-    	roomDeck.add(new RoomCard(RoomType.LIBRARY));
-    	roomDeck.add(new RoomCard(RoomType.STUDY));
-    	roomDeck.add(new RoomCard(RoomType.HALL));
-    	roomDeck.add(new RoomCard(RoomType.LOUNGE));
-    	roomDeck.add(new RoomCard(RoomType.DINING));
-    	roomDeck.add(new RoomCard(RoomType.KITCHEN));
-    	RoomCard murderRoom = roomDeck.get(new Random().nextInt(roomDeck.size()));
-    	roomDeck.remove(murderRoom);
-    	solutionRoom = murderRoom.getRoom();
-    	remainingDeck.addAll(roomDeck);
-    	ArrayList<WeaponCard> weaponDeck = new ArrayList<WeaponCard>();
-    	weaponDeck.add(new WeaponCard(WeaponType.CANDLESTICK));
-    	weaponDeck.add(new WeaponCard(WeaponType.DAGGER));
-    	weaponDeck.add(new WeaponCard(WeaponType.LEADPIPE));
-    	weaponDeck.add(new WeaponCard(WeaponType.REVOLVER));
-    	weaponDeck.add(new WeaponCard(WeaponType.ROPE));
-    	weaponDeck.add(new WeaponCard(WeaponType.SPANNER));
-    	WeaponCard murderWeapon = weaponDeck.get(new Random().nextInt(weaponDeck.size()));
-    	weaponDeck.remove(murderWeapon);
-    	solutionWeapon = murderWeapon.getWeapon();
-    	remainingDeck.addAll(weaponDeck);
-    	ArrayList<CharacterCard> characterDeck = new ArrayList<CharacterCard>();
-    	characterDeck.add(new CharacterCard(CharacterType.MISSSCARLET));
-    	characterDeck.add(new CharacterCard(CharacterType.COLONELMUSTARD));
-    	characterDeck.add(new CharacterCard(CharacterType.MRSWHITE));
-    	characterDeck.add(new CharacterCard(CharacterType.MRGREEN));
-    	characterDeck.add(new CharacterCard(CharacterType.MRSPEACOCK));
-    	characterDeck.add(new CharacterCard(CharacterType.PROFESSORPLUM));
-    	CharacterCard murderer = characterDeck.get(new Random().nextInt(characterDeck.size()));
-    	characterDeck.remove(murderer);
-    	solutionCharacter = murderer.getCharacter();
-    	remainingDeck.addAll(characterDeck);
-    	while (!remainingDeck.isEmpty()) {
-    		for (Player p : activePlayers) {
-    			if (!remainingDeck.isEmpty()) {
-    				p.addToHand(remainingDeck.get(new Random().nextInt(remainingDeck.size())));
-    			}
-    		}
-    	}
+        ArrayList<Card> remainingDeck = new ArrayList<Card>();
+        ArrayList<RoomCard> roomDeck = new ArrayList<RoomCard>();
+        Random random = new Random();
+        roomDeck.add(new RoomCard(RoomType.BALLROOM));
+        roomDeck.add(new RoomCard(RoomType.CONSERVATORY));
+        roomDeck.add(new RoomCard(RoomType.BILLIARDROOM));
+        roomDeck.add(new RoomCard(RoomType.LIBRARY));
+        roomDeck.add(new RoomCard(RoomType.STUDY));
+        roomDeck.add(new RoomCard(RoomType.HALL));
+        roomDeck.add(new RoomCard(RoomType.LOUNGE));
+        roomDeck.add(new RoomCard(RoomType.DININGROOM));
+        roomDeck.add(new RoomCard(RoomType.KITCHEN));
+        RoomCard murderRoom = roomDeck.get(random.nextInt(roomDeck.size()));
+        roomDeck.remove(murderRoom);
+        solutionRoom = murderRoom.getRoom();
+        remainingDeck.addAll(roomDeck);
+        ArrayList<WeaponCard> weaponDeck = new ArrayList<WeaponCard>();
+        weaponDeck.add(new WeaponCard(WeaponType.CANDLESTICK));
+        weaponDeck.add(new WeaponCard(WeaponType.DAGGER));
+        weaponDeck.add(new WeaponCard(WeaponType.LEADPIPE));
+        weaponDeck.add(new WeaponCard(WeaponType.REVOLVER));
+        weaponDeck.add(new WeaponCard(WeaponType.ROPE));
+        weaponDeck.add(new WeaponCard(WeaponType.SPANNER));
+        WeaponCard murderWeapon = weaponDeck.get(random.nextInt(weaponDeck.size()));
+        weaponDeck.remove(murderWeapon);
+        solutionWeapon = murderWeapon.getWeapon();
+        remainingDeck.addAll(weaponDeck);
+        ArrayList<CharacterCard> characterDeck = new ArrayList<CharacterCard>();
+        characterDeck.add(new CharacterCard(CharacterType.MISSSCARLETT));
+        characterDeck.add(new CharacterCard(CharacterType.COLONELMUSTARD));
+        characterDeck.add(new CharacterCard(CharacterType.MRSWHITE));
+        characterDeck.add(new CharacterCard(CharacterType.MRGREEN));
+        characterDeck.add(new CharacterCard(CharacterType.MRSPEACOCK));
+        characterDeck.add(new CharacterCard(CharacterType.PROFESSORPLUM));
+        CharacterCard murderer = characterDeck.get(random.nextInt(characterDeck.size()));
+        characterDeck.remove(murderer);
+        solutionCharacter = murderer.getCharacter();
+        remainingDeck.addAll(characterDeck);
+        while (!remainingDeck.isEmpty()) {
+            for (Player p : activePlayers) {
+                if (!remainingDeck.isEmpty()) {
+                    p.addToHand(remainingDeck.get(random.nextInt(remainingDeck.size())));
+                }
+            }
+        }
     }
     
     public void setupPlayers() {
