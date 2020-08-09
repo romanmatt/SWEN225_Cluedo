@@ -21,6 +21,9 @@ public class CluedoGame {
     ArrayList<Card> playerDeck = new ArrayList<Card>();
     ArrayList<Card> solutionDeck = new ArrayList<Card>();
 
+    RoomType solutionRoom;
+    WeaponType solutionWeapon;
+    CharacterType solutionCharacter;
 
     /**
      * run() is a collective of methods
@@ -125,8 +128,15 @@ public class CluedoGame {
         }
         return true;
     }
-
-
+    
+    public boolean accuse(Accusation accusation) {
+        if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accustion.accusedCharacter == solutionCharacter) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     /**
      * Make two die variable that randomly generates
      * numbers between 1-6 and add them together to get
