@@ -187,7 +187,26 @@ public class CluedoGame {
                         int pX = player.getY();
                         int pY = player.getX();
                         
+                        int xSum;
+                        int ySum;
                         
+                        if(xCor>pX){
+                            xSum = xCor - pX;
+                        }
+                        else{
+                            xSum = pX - xCor;
+                        }
+                        
+                        if(yCor>pY){
+                            ySum = yCor - pY;
+                        }
+                        else{
+                            ySum = pY - yCor;
+                        }
+                        
+                        if(xSum+ySum == steps){
+                            reachable = true;
+                        }
                         
                         //check coord is reachable
                         if(reachable){
