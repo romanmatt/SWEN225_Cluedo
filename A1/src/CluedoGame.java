@@ -159,7 +159,7 @@ public class CluedoGame {
             }
             s.close();
         }
-        //===============================================================================================================================================
+        //----------------------------------------------
         if (input.equals("Y")) {
             // Move the player
             int steps = rollDiceGenerator();
@@ -192,6 +192,7 @@ public class CluedoGame {
             
            
         }
+        //----------------------------------------------
         if (player.getRoom() != null) {
             // Make a suggestion or accusation
             validInput = false;
@@ -206,9 +207,11 @@ public class CluedoGame {
                 }
                 s.close();
             }
+            //----------------------------------------------
             if (input.equals("S")) {
                 // Make a suggestion
             }
+            //----------------------------------------------
             if (input.equals("A")) {
                 // Make an accusation
             }
