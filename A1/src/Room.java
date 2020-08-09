@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 class Room {
     private ArrayList<Cell> cells; // The cells of the board that make up this room
-    private ArrayList<Cell> doors; // The door cells this room uses for movement calculations
+    private ArrayList<DoorCell> doors; // The door cells this room uses for movement calculations
     private ArrayList<Character> characters; // The players currently in this room
     private ArrayList<WeaponType> weapons; // The weapon piece currently in this room
 
@@ -17,6 +17,10 @@ class Room {
     public void addCell(RoomCell cell) {
         cells.add(cell);
     }
+    
+    public void addDoor(DoorCell door) {
+		doors.add(door);
+	}
 
     public ArrayList<Character> getCharacters() {
         return characters;
