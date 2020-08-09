@@ -1,21 +1,27 @@
 public class DoorCell implements Cell {
 
-    private int x;
-    private int y;
-    private Room room;
+	private int x;
+	private int y;
+	private Room room;
+	
+	public DoorCell(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
 
-    public DoorCell(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+	public Player getPlayer() {
+		return null;
+	}
 
-    @Override
-    public int getXPos() {
-        return x;
-    }
-
-    @Override
-    public int getYPos() {
-        return y;
-    }
+	public RoomType getType() {
+		return null;
+	}
 }
