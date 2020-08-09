@@ -170,7 +170,7 @@ public class CluedoGame {
             int yCor;
             
             while (!validInput) {
-                System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
+                System.out.println(player.toString() + " enter a coordinate you can reach in " + steps + " steps seperated by a space eg:5 3");
                 Scanner s = new Scanner(System.in);
                 xCor = null;
                 yCor = null;
@@ -183,8 +183,14 @@ public class CluedoGame {
                     //check coord within boundary
                     if(xCor<26 && yCor<25){
                         
-                        //check coord is possible
-                        if(){
+                        boolean reachable = false;
+                        int pX = player.getY();
+                        int pY = player.getX();
+                        
+                        
+                        
+                        //check coord is reachable
+                        if(reachable){
                             validInput = true;
                         }
                         else { System.out.println("You cannot reach that location. Please enter a valid coordinate.");}
