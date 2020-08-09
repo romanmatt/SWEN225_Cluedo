@@ -153,6 +153,7 @@ public class CluedoGame {
             }
             s.close();
         }
+        //===============================================================================================================================================
         if (input.equals("Y")) {
             // Move the player
             int steps = rollDiceGenerator();
