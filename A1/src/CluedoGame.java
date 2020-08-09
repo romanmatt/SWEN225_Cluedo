@@ -210,9 +210,19 @@ public class CluedoGame {
                         
                         //check coord is reachable
                         if(reachable){
-                            validInput = true;
-                        }
-                        else { System.out.println("You cannot reach that location. Please enter a valid coordinate.");}
+                            
+                            boolean obstruction = true;
+                            
+                            if(//something){
+                                //HOW TO CHECK FOR OBSTRUCTIONS?????
+                                obstruction = false;
+                            }
+                                
+                            //check no obstructions eg:room/player
+                            if(!obstruction){
+                                validInput = true;
+                            } else{ System.out.println("You could reach that location but a wall or player blocks your way. Please enter a valid coordinate"); }
+                        } else { System.out.println("You cannot reach that location. Please enter a valid coordinate.");}
                     } else { System.out.println("Please enter a coordinate within the board's boundaries.");}
                 } else { System.out.println("Please enter a valid number.");}
                 s.close();
