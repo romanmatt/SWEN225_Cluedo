@@ -229,7 +229,25 @@ public class CluedoGame {
                     CharacterType accusedCharacter;
                     
                     while (!validRoom) {
-                        
+                        System.out.println(player.toString() + " enter the accused room");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("ballroom") || 
+                            input.equalsIgnoreCase("conservatory") || 
+                            input.equalsIgnoreCase("billiardroom") || 
+                            input.equalsIgnoreCase("library") || 
+                            input.equalsIgnoreCase("study") || 
+                            input.equalsIgnoreCase("hall") || 
+                            input.equalsIgnoreCase("lounge") || 
+                            input.equalsIgnoreCase("diningroom") || 
+                            input.equalsIgnoreCase("kitchen")) 
+                        {
+                            accusedRoom = input;
+                            validInput = true;
+                        } else {
+                            System.out.println("Please enter a valid Room.");
+                        } 
+                        s.close();
                     }
                         
                     while (!validWeapon) {
@@ -239,17 +257,6 @@ public class CluedoGame {
                     while (!validChar) {
                         
                     }
-                                
-                    Scanner s = new Scanner(System.in);
-                    input = s.next();
-                    if (input.equals("S") || input.equals("A")) {
-                        validInput = true;
-                    } else {
-                        System.out.println("Please enter S or A.");
-                    } 
-                    s.close();
-                    
-                    
                     
                     //break loop
                     if(validRoom && validWeapon && validChar){
