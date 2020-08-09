@@ -210,6 +210,10 @@ public class Board {
     	// Alt: Path finding
     	ArrayList<Cell> path = new ArrayList<Cell>();
     	// TODO continue from here
+	    
+	    
+	    
+	    
     }
     
     // Should contain the coords of the doors of each room, and calculates which of those is closer to the given target cell
