@@ -130,11 +130,53 @@ public class CluedoGame {
     }
     
     public boolean accuse(Accusation accusation) {
-        if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accustion.accusedCharacter == solutionCharacter) {
+        if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accusation.accusedCharacter == solutionCharacter) {
             return true;
         } else {
             return false;
         }
+    }
+    
+    public void takeTurn(Player player) {
+    	System.out.println(player.toString() + "'s turn.");
+    	String input = "";
+    	boolean validInput = false;
+    	while (!validInput) {
+    		System.out.println(player.toString() + " would you like to move? (Y/N)");
+        	Scanner s = new Scanner(System.in);
+        	input = s.next();
+        	if (input.equals("Y") || input.equals("N")) {
+        		validInput = true;
+        	} else {
+        		System.out.println("Please enter Y or N.");
+        	}
+        	s.close();
+    	}
+    	if (input.equals("Y")) {
+    		// Move the player
+    	}
+    	if (player.getRoom() != null) {
+    		// Make a suggestion or accusation
+    		validInput = false;
+    		while (!validInput) {
+    			System.out.println(player.toString() + " would you like to make a suggestion (S) or accusation (A)?");
+    			Scanner s = new Scanner(System.in);
+    			input = s.next();
+    			if (input.equals("S") || input.equals("A")) {
+    				validInput = true;
+    			} else {
+    				System.out.println("Please enter S or A.");
+    			}
+    			s.close();
+    		}
+    		if (input.equals("S")) {
+    			// Make a suggestion
+    		}
+    		if (input.equals("A")) {
+    			// Make an accusation
+    		}
+    	}
+    	System.out.println("End of " + player.toString() + "'s turn.");
     }
     
     /**
@@ -154,7 +196,4 @@ public class CluedoGame {
         CluedoGame cluedoGame = new CluedoGame();
         cluedoGame.run();
     }
-
-
-
 }
