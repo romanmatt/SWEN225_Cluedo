@@ -216,9 +216,28 @@ public class CluedoGame {
             //----------------------------------------------
             if (input.equals("A")) {
                 // Make an accusation
+                 validInput = false;
+                
+                while (!validInput) {
+                    System.out.println(player.toString() + " would you like to make a suggestion (S) or accusation (A)?");
+                    Scanner s = new Scanner(System.in);
+                    input = s.next();
+                    if (input.equals("S") || input.equals("A")) {
+                        validInput = true;
+                    } else {
+                        System.out.println("Please enter S or A.");
+                    }
+                    
+                s.close();
+                
+                accuse();
             }
         }
         System.out.println("End of " + player.toString() + "'s turn.");
+    }
+        
+    public void win(Player player){
+        
     }
 
     /**
