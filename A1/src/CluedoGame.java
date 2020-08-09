@@ -157,6 +157,22 @@ public class CluedoGame {
         if (input.equals("Y")) {
             // Move the player
             int steps = rollDiceGenerator();
+            System.out.println(player.toString() + " has rolled a " + steps);
+            
+            String input = "";
+            boolean validInput = false;
+            while (!validInput) {
+            System.out.println(player.toString() + " would you like to move? (Y/N)");
+            Scanner s = new Scanner(System.in);
+            input = s.next();
+            if (input.equals("Y") || input.equals("N")) {
+                validInput = true;
+            } else {
+                System.out.println("Please enter Y or N.");
+            }
+            s.close();
+        }
+           
         }
         if (player.getRoom() != null) {
             // Make a suggestion or accusation
