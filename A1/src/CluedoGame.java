@@ -155,6 +155,7 @@ public class CluedoGame {
         }
         if (input.equals("Y")) {
             // Move the player
+            int steps = rollDiceGenerator();
         }
         if (player.getRoom() != null) {
             // Make a suggestion or accusation
