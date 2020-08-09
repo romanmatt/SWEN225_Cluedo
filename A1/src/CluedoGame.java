@@ -187,17 +187,9 @@ public class CluedoGame {
                         if(){
                             validInput = true;
                         }
-                        else{
-                            System.out.println("You cannot get there. Please enter a valid coordinate.");
-                        }
-                    }
-                    else{
-                        System.out.println("Please enter a coordinate within the board.");
-                    }
-                    
-                } else {
-                    System.out.println("Please enter a valid number.");
-                }
+                        else { System.out.println("You cannot reach that location. Please enter a valid coordinate.");}
+                    } else { System.out.println("Please enter a coordinate within the board's boundaries.");}
+                } else { System.out.println("Please enter a valid number.");}
                 s.close();
             }
             
