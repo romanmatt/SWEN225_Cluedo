@@ -166,12 +166,14 @@ public class CluedoGame {
             System.out.println(player.toString() + " has rolled a " + steps);
             String input = "";
             boolean validInput = false;
+            int xCor;
+            int yCor;
             
             while (!validInput) {
                 System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
                 Scanner s = new Scanner(System.in);
-                int xCor;
-                int yCor;
+                xCor = null;
+                yCor = null;
                 
                 if (s.hasNextInt() && s.hasNextInt()) {
                     xCor = s.next();
