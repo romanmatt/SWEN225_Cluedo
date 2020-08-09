@@ -162,20 +162,20 @@ public class CluedoGame {
             boolean validInput = false;
             
             while (!validInput) {
-            System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
-            Scanner s = new Scanner(System.in);
-            int xCor;
-            int yCor;
+                System.out.println(player.toString() + " enter a coordinate seperated by a space eg:5 3");
+                Scanner s = new Scanner(System.in);
+                int xCor;
+                int yCor;
                 
-            if (s.hasNextInt() && s.hasNextInt()) {
-                xCor = s.next();
-                yCor = s.next();
-                validInput = true;
-            } else {
-                System.out.println("Please enter a valid coordinate.");
+                if (s.hasNextInt() && s.hasNextInt()) {
+                    xCor = s.next();
+                    yCor = s.next();
+                    validInput = true;
+                } else {
+                    System.out.println("Please enter a valid coordinate.");
+                }
+                s.close();
             }
-            s.close();
-        }
            
         }
         if (player.getRoom() != null) {
