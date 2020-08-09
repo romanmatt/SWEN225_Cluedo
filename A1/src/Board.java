@@ -429,4 +429,70 @@ public class Board {
 		}
 		return closest;
 	}	
+	
+	
+	/**
+     * toString method to print out board text
+     * */
+    @Override
+    public String toString() {
+        //Print out Coordinates
+        Cell board[][] = new Cell[25][24];
+
+        //Print col coordinates at x axis
+        StringBuilder stringBuilder = new StringBuilder();
+        char col = 'A';
+        stringBuilder.append("\t\t ");
+        for(int x = 0; x < 24; x++) {
+            stringBuilder.append(col + " ");
+            col++;
+        }
+        stringBuilder.append("/n");
+
+        //Print row coordinates at y axis
+        for(int y = 0; col < board.length; y++ ){
+            if(y < board.length-1 && y != 0 ) {
+                stringBuilder.append("\t"+ y + "\t");
+            } else {
+                stringBuilder.append("\t \t");
+            }
+	//Print off edges of board
+            for(int x = 0; x < board[0].length; x++) {
+                if(x==0)
+                    if(board[y][x] instanceof RoomCell || board[y][x] instanceof HallwayCell)
+                        stringBuilder.append("|");
+                    else
+                        stringBuilder.append(" ");
+
+                    //Print HallwayCell
+                else if(board[y][x] instanceof HallwayCell) {
+                    if(x+1 < board[0].length && (board[y][x+1] instanceof HallwayCell
+                            || (board[y][x+1] instanceof DoorCell))) {
+                        stringBuilder.append(board[y][x].toString() + ".");
+                    } else {
+                        stringBuilder.append(board[y][x].toString() + "|");
+                    }
+                }
+
+                //Room Cell
+                else if(board[y][x] instanceof RoomCell) {
+                    String roomCellString = board[y][x].toString();
+                    stringBuilder.append(roomCellString);
+                    if(roomCellString.length() > 2)
+                        x += (roomCellString.length()/2 - 1);
+                }
+
+                //DoorCell
+                else if(board[y][x] instanceof DoorCell) {
+                    if((board[y][x+1] instanceof HallwayCell)) {
+                        stringBuilder.append("+");
+                    } else {
+                        stringBuilder.append(". ");
+                    }
+                }
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
 }
