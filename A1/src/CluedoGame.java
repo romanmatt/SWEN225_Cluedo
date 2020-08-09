@@ -138,6 +138,12 @@ public class CluedoGame {
         }
     }
 
+    /**
+     * Prints instructions and accepts input for player turn
+     * Calls appropriate action based on input
+     * Move action calculates if move is possible
+     * Accuse and suggest methods called
+     */
     public void takeTurn(Player player) {
         System.out.println(player.toString() + "'s turn.");
         String input = "";
@@ -183,6 +189,7 @@ public class CluedoGame {
                 }
                 s.close();
             }
+            
            
         }
         if (player.getRoom() != null) {
