@@ -1,38 +1,43 @@
+
 public class HallwayCell implements Cell {
 
-    private int x;
-    private int y;
-    private Player player = null;
+	private int x;
+	private int y;
+	private Player player = null;
+	
+	public HallwayCell(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public boolean isOccupied() {
+		if (player != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Player getPlayer() {
+		if (isOccupied()) {
+			return player;
+		} else {
+			return null;
+		}
+	}
 
-    public HallwayCell(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-
-    public boolean isOccupied() {
-        if (player != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public Player getPlayer() {
-        if (isOccupied()) {
-            return player;
-        } else {
-            return null;
-        }
-    }
-
-    @Override
-    public int getXPos() {
-        return x;
-    }
-
-    @Override
-    public int getYPos() {
-        return y;
-    }
+	@Override
+	public RoomType getType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
