@@ -12,8 +12,11 @@ public class Player {
         this.playersCharacter = character;
         isStillPlaying = true;
     }
-
     /* Helper methods */
+
+    public ArrayList<Card> getHand(){
+        return this.playersHand;
+    }
 
 
     public CharacterType getName(){
