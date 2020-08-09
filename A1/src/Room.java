@@ -10,7 +10,7 @@ class Room {
         return cells;
     }
 
-    public ArrayList<Cell> getDoors() {
+    public ArrayList<DoorCell> getDoors() {
         return doors;
     }
 
