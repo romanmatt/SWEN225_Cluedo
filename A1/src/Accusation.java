@@ -15,6 +15,6 @@ public class Accusation {
 
 
     public String toString() {
-        return null;
+        return player.toString() + " accused " + accusedCharacter.toString() + " with the " + accusedWeapon.toString() + " in the " + accusedRoom.toString() + ".";
     }
 }
