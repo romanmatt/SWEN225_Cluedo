@@ -11,4 +11,8 @@ public interface Cell {
     public int getY() {
         return y;
     }
+    
+    Player getPlayer();
+
+	RoomType getType();
 }
