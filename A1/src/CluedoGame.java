@@ -43,7 +43,7 @@ public class CluedoGame {
     /**
      * userInput() takes care of the user's text input
      * on what player they wish to play
-     * @param input
+     *
      * */
     public static String userInput() {
         String input = new String();
@@ -51,15 +51,15 @@ public class CluedoGame {
         try{
             System.out.println(
                     "CLUEDO: TEXT-BASED TUI DESKTOP VERSION.\n" +
-                    "PLAYERS:\n"+
-                    "R - MISS SCARLETT \n"+
-                    "M - COLONEL MUSTARD\n"+
-                    "W - MRS. WHITE\n"+
-                    "G - MR. GREEN\n"+
-                    "E - MRS. PEACOCK\n"+
-                    "P - PROFESSOR PLUM\n"+
-                    "PLEASE ENTER CHARACTERS THAT YOU WOULD LIKE TO PLAY IN THE GAME BETWEEN 3-6.\n" +
-                    "INPUT EXAMPLE: \"G-P-M\" "
+                            "PLAYERS:\n"+
+                            "R - MISS SCARLETT \n"+
+                            "M - COLONEL MUSTARD\n"+
+                            "W - MRS. WHITE\n"+
+                            "G - MR. GREEN\n"+
+                            "E - MRS. PEACOCK\n"+
+                            "P - PROFESSOR PLUM\n"+
+                            "PLEASE ENTER CHARACTERS THAT YOU WOULD LIKE TO PLAY IN THE GAME BETWEEN 3-6.\n" +
+                            "INPUT EXAMPLE: \"G P M\" , \"W R M P\""
             );
             input = sc.nextLine();
         }
@@ -76,59 +76,60 @@ public class CluedoGame {
      * @return false
      * */
     private boolean isInputValid(String str){
-        String [] token = str.split("-");
+        char token[] = str.toUpperCase().toCharArray();
         for(int i =0; i<token.length; i++){
-            if(token[i+1].equals(" ")|| i== (token.length-1)){
+            if(i==token.length-1 || token[i+1]==' '){
 
                 Player player;
 
                 //Check to see what token is in input
                 //Scarlett
-                if(token[i].equals("R")){
+                if(token[i]=='R'){
                     player = new Player(CharacterType.MissScarlett);
                 }
                 //Mustard
-                else if(token[i].equals("M")){
+                else if(token[i]=='M'){
                     player = new Player(CharacterType.ColonelMustard);
                 }
                 //White
-                else if(token[i].equals("W")){
+                else if(token[i]=='W'){
                     player = new Player(CharacterType.MrsWhite);
                 }
                 //Green
-                else if(token[i].equals("G")){
+                else if(token[i]=='G'){
                     player = new Player(CharacterType.MrGreen);
                 }
                 //Peacock
-                else if(token[i].equals("E")){
+                else if(token[i]=='E'){
                     player = new Player(CharacterType.MrsPeacock);
                 }
                 //Plum
-                else if(token[i].equals("P")){
+                else if(token[i]=='P'){
                     player = new Player(CharacterType.ProfessorPlum);
                 }
                 else{
-                    System.out.print("ERROR: INVALID INPUT.");
-                        return false;
+                    System.out.print("ERROR: INVALID INPUT./n");
+                    return false;
                 }
-
-                activePlayers.add(player);
 
                 for(Player p: activePlayers){
                     if(p.equals(player)){
                         System.out.print("ERROR: CANNOT DUPLICATE SAME PLAYERS");
                         return false;
-                    }
+                        }
+                }
+                activePlayers.add(player);
+                takeTurn(player);
+                i++;
+                }
+                else{
+                    System.out.print("ERROR: MUST BE SEPARATED BY ' '.");
+                    return false;
                 }
             }
-            else{
-                System.out.print("ERROR: MUST BE SEPARATED BY '-' ");
-                return false;
-            }
-        }
         return true;
     }
-    
+
     public boolean accuse(Accusation accusation) {
         if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accusation.accusedCharacter == solutionCharacter) {
             return true;
@@ -136,49 +137,49 @@ public class CluedoGame {
             return false;
         }
     }
-    
+
     public void takeTurn(Player player) {
-    	System.out.println(player.toString() + "'s turn.");
-    	String input = "";
-    	boolean validInput = false;
-    	while (!validInput) {
-    		System.out.println(player.toString() + " would you like to move? (Y/N)");
-        	Scanner s = new Scanner(System.in);
-        	input = s.next();
-        	if (input.equals("Y") || input.equals("N")) {
-        		validInput = true;
-        	} else {
-        		System.out.println("Please enter Y or N.");
-        	}
-        	s.close();
-    	}
-    	if (input.equals("Y")) {
-    		// Move the player
-    	}
-    	if (player.getRoom() != null) {
-    		// Make a suggestion or accusation
-    		validInput = false;
-    		while (!validInput) {
-    			System.out.println(player.toString() + " would you like to make a suggestion (S) or accusation (A)?");
-    			Scanner s = new Scanner(System.in);
-    			input = s.next();
-    			if (input.equals("S") || input.equals("A")) {
-    				validInput = true;
-    			} else {
-    				System.out.println("Please enter S or A.");
-    			}
-    			s.close();
-    		}
-    		if (input.equals("S")) {
-    			// Make a suggestion
-    		}
-    		if (input.equals("A")) {
-    			// Make an accusation
-    		}
-    	}
-    	System.out.println("End of " + player.toString() + "'s turn.");
+        System.out.println(player.toString() + "'s turn.");
+        String input = "";
+        boolean validInput = false;
+        while (!validInput) {
+            System.out.println(player.toString() + " would you like to move? (Y/N)");
+            Scanner s = new Scanner(System.in);
+            input = s.next();
+            if (input.equals("Y") || input.equals("N")) {
+                validInput = true;
+            } else {
+                System.out.println("Please enter Y or N.");
+            }
+            s.close();
+        }
+        if (input.equals("Y")) {
+            // Move the player
+        }
+        if (player.getRoom() != null) {
+            // Make a suggestion or accusation
+            validInput = false;
+            while (!validInput) {
+                System.out.println(player.toString() + " would you like to make a suggestion (S) or accusation (A)?");
+                Scanner s = new Scanner(System.in);
+                input = s.next();
+                if (input.equals("S") || input.equals("A")) {
+                    validInput = true;
+                } else {
+                    System.out.println("Please enter S or A.");
+                }
+                s.close();
+            }
+            if (input.equals("S")) {
+                // Make a suggestion
+            }
+            if (input.equals("A")) {
+                // Make an accusation
+            }
+        }
+        System.out.println("End of " + player.toString() + "'s turn.");
     }
-    
+
     /**
      * Make two die variable that randomly generates
      * numbers between 1-6 and add them together to get
@@ -191,6 +192,11 @@ public class CluedoGame {
         int dieSum = die1 + die2;
         return dieSum;
     }
+
+    /**
+     * toString() method from the board class
+     * draws the board into console
+     * */
 
     public static void main(String[] args){
         CluedoGame cluedoGame = new CluedoGame();
