@@ -25,6 +25,11 @@ public class CluedoGame {
     WeaponType solutionWeapon;
     CharacterType solutionCharacter;
 
+    public CluedoGame() {
+    	isGameOver = false;
+    	board = new Board();
+    }    
+    
     /**
      * run() is a collective of methods
      * responsible for the text GUI of the game
@@ -39,6 +44,12 @@ public class CluedoGame {
         }
 
     }
+    
+    public void clock() {
+    	for (Player p : activePlayers) {
+    		takeTurn(p);
+    	}
+    }    
 
     /**
      * userInput() takes care of the user's text input
@@ -293,5 +304,10 @@ public class CluedoGame {
     public static void main(String[] args){
         CluedoGame cluedoGame = new CluedoGame();
         cluedoGame.run();
+        cluedoGame.setupCards();
+        cluedoGame.setupPlayers();
+        while (!isGameOver) {
+        	cluedoGame.clock();
+        }
     }
 }
