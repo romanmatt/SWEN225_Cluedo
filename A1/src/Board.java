@@ -25,7 +25,7 @@ public class Board {
             "..................BBBBBB"+
             "DDDDDDDD..........+BBBBB"+
             "DDDDDDDD..........BBBBBB"+
-            "DDDDDDD...........BBBBBB"+
+            "DDDDDDD+..........BBBBBB"+
             "DDDDDDDD..........BBBB+B"+
             "DDDDDDDD................"+
             "DDDDDDDD..........LL+LL."+
