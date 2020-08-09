@@ -236,6 +236,10 @@ public class CluedoGame {
         System.out.println("End of " + player.toString() + "'s turn.");
     }
         
+    /**
+     * Win function
+     * Ends game and calls win screen
+     */
     public void win(Player player){
         
     }
