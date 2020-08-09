@@ -11,7 +11,7 @@ class RoomCard implements Card {
     }
     
     /** Setter */
-    public RoomType setRoom (RoomType room){
+    public void setRoom (RoomType room){
         this.room = room;   
     }
     
@@ -21,7 +21,7 @@ class RoomCard implements Card {
     }
 
     /** Remove */
-    public RoomType removeRoom() {
+    public void removeRoom() {
         this.room = null;
     }
 
