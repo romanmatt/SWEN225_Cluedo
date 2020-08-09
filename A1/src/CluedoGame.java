@@ -175,19 +175,28 @@ public class CluedoGame {
                 xCor = null;
                 yCor = null;
                 
+                //check coord right format
                 if (s.hasNextInt() && s.hasNextInt()) {
                     xCor = s.next();
                     yCor = s.next();
                     
+                    //check coord within boundary
                     if(xCor<26 && yCor<25){
-                        validInput = true;
+                        
+                        //check coord is possible
+                        if(){
+                            validInput = true;
+                        }
+                        else{
+                            System.out.println("You cannot get there. Please enter a valid coordinate.");
+                        }
                     }
                     else{
-                        System.out.println("Please enter a valid coordinate.");
+                        System.out.println("Please enter a coordinate within the board.");
                     }
                     
                 } else {
-                    System.out.println("Please enter a valid coordinate.");
+                    System.out.println("Please enter a valid number.");
                 }
                 s.close();
             }
@@ -212,6 +221,8 @@ public class CluedoGame {
             //----------------------------------------------
             if (input.equals("S")) {
                 // Make a suggestion
+                
+                
             }
             //----------------------------------------------
             if (input.equals("A")) {
