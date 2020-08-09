@@ -13,22 +13,6 @@ public class Accusation {
         this.player = player;
     }
 
-// Moved this method to CluedoGame to have access to the solution
-//public boolean checkAccusation(){
-//        for(int i = 0; i < 6; i++){
-//
-//            //this is temporary
-//            System.out.println();
-//            player.setIsStillPlaying(false);
-//            System.out.println("Player " + player.getName() + " is out!");
-//            return false;
-//
-//        }
-//
-//
-//        return false;
-//}
-
 
     public String toString() {
         return null;
