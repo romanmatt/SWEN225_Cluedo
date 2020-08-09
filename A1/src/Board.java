@@ -46,8 +46,69 @@ public class Board {
     }
 
     public Board() {
-
-
+    	ballroom = new Room();
+    	conservatory = new Room();
+    	billiard = new Room();
+    	library = new Room();
+    	study = new Room();
+    	hall = new Room();
+    	lounge = new Room();
+    	dining = new Room();
+    	kitchen = new Room();
+    	board = parseBoard(initialCellBoard);
+    	int x = 0;
+    	int y = 0;
+    	while (y < 24) {
+    		x = 0;
+    		while (x < 25) {
+        		if (board[x][y].getClass() == DoorCell.class) {
+        			Cell door = board[x][y];
+        			RoomType room = RoomType.HALL;
+        			if (board[x-1][y].getClass() == RoomCell.class) {
+        				room = board[x-1][y].getType();
+        			}
+        			if (board[x+1][y].getClass() == RoomCell.class) {
+        				room = board[x+1][y].getType();
+        			}
+        			if (board[x][y-1].getClass() == RoomCell.class) {
+        				room = board[x][y-1].getType();
+        			}
+        			if (board[x][y+1].getClass() == RoomCell.class) {
+        				room = board[x][y+1].getType();
+        			}
+        			if (room == RoomType.BALLROOM) {
+        				ballroom.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.CONSERVATORY) {
+        				conservatory.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.BILLIARD) {
+        				billiard.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.LIBRARY) {
+        				library.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.STUDY) {
+        				study.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.HALL) {
+        				hall.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.LOUNGE) {
+        				lounge.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.DINING) {
+        				dining.addDoor((DoorCell) door);
+        			}
+        			if (room == RoomType.KITCHEN) {
+        				kitchen.addDoor((DoorCell) door);
+        			}
+        		}
+        		x ++;
+        	}
+    		y ++;
+    	}
+    	
     }
 
     // Parser code:
@@ -221,7 +282,6 @@ public class Board {
     		return false;
     	}
     	// Alt: Path finding
-    	ArrayList<Cell> path = new ArrayList<Cell>();
     	// Fringe is a priority queue based on the number of steps taken
     	PriorityQueue<Fringe> fringe = new PriorityQueue<Fringe>();
     	fringe.add(new Fringe(pos));
@@ -283,8 +343,90 @@ public class Board {
     }
     
     // Should contain the coords of the doors of each room, and calculates which of those is closer to the given target cell
-    private Cell closestDoor(RoomType room, Cell target) {
-		// TODO Auto-generated method stub
-		return null;
+    public Cell closestDoor(RoomType room, Cell target) {
+    	int lowestDirectCost = 999999; //Higher than possible
+    	DoorCell closest = null;
+    	if (room == RoomType.BALLROOM) {
+    		for (DoorCell c : ballroom.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.CONSERVATORY) {
+			for (DoorCell c : conservatory.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.BILLIARD) {
+			for (DoorCell c : billiard.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.LIBRARY) {
+			for (DoorCell c : library.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.STUDY) {
+			for (DoorCell c : study.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.HALL) {
+			for (DoorCell c : hall.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.LOUNGE) {
+			for (DoorCell c : lounge.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.DINING) {
+			for (DoorCell c : dining.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		if (room == RoomType.KITCHEN) {
+			for (DoorCell c : kitchen.getDoors()) {
+    			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
+    			if (cost < lowestDirectCost) {
+    				lowestDirectCost = cost;
+    				closest = c;
+    			}
+    		}
+		}
+		return closest;
 	}	
 }
