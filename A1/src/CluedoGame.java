@@ -236,13 +236,21 @@ public class CluedoGame {
                         System.out.println("Please enter S or A.");
                     }
                     
-                s.close();
+                    s.close();
                     
-                //if accusation is right call win 
-                Accusation accusation = new Accusation(accusedRoom,accusedWeapon,accusedCharacter);
-                if(accuse(accusation)){
-                    win(player);
-                }
+                    
+                    
+                    //break loop
+                    if(validRoom && validWeapon && validChar){
+                        validAcc = true;   
+                        
+                        //if accusation is right call win 
+                        Accusation accusation = new Accusation(accusedRoom,accusedWeapon,accusedCharacter);
+                        if(accuse(accusation)){
+                            win(player);
+                        } 
+                    }
+                        
             }
         }
         System.out.println("End of " + player.toString() + "'s turn.");
