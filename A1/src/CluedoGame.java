@@ -230,7 +230,11 @@ public class CluedoGame {
                     
                 s.close();
                 
-                accuse();
+                Accusation accusation = new Accusation();
+                    
+                if(accuse(accusation)){
+                    win(player);
+                }
             }
         }
         System.out.println("End of " + player.toString() + "'s turn.");
