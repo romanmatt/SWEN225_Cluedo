@@ -213,8 +213,10 @@ public class CluedoGame {
                             
                             boolean obstruction = true;
                             
-                            if(//something){
-                                //HOW TO CHECK FOR OBSTRUCTIONS?????
+                            if(//something){                           
+                                //========================================================================================================
+                                //HOW TO CHECK FOR OBSTRUCTIONS?????????????????????????????????????????????????????
+                                //========================================================================================================
                                 obstruction = false;
                             }
                                 
@@ -248,16 +250,113 @@ public class CluedoGame {
             //----------------------------------------------
             if (input.equals("S")) {
                 // Make a suggestion
+                boolean validSug    = false;
+                boolean validRoom   = false;
+                boolean validWeapon = false;
+                boolean validChar   = false;
                 
+                //check valid input
+                while (!validAcc) {
+                    System.out.println(player.toString() + " is making an accusation");
+                    RoomType accusedRoom;
+                    WeaponType accusedWeapon;
+                    CharacterType accusedCharacter;
+                    
+                    while (!validRoom) {
+                        System.out.println(player.toString() + " enter the accused room");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("ballroom") || 
+                            input.equalsIgnoreCase("conservatory") || 
+                            input.equalsIgnoreCase("billiardroom") || 
+                            input.equalsIgnoreCase("library") || 
+                            input.equalsIgnoreCase("study") || 
+                            input.equalsIgnoreCase("hall") || 
+                            input.equalsIgnoreCase("lounge") || 
+                            input.equalsIgnoreCase("diningroom") || 
+                            input.equalsIgnoreCase("kitchen")) 
+                        {
+                            accusedRoom = input;
+                            validRoom = true;
+                        } else {
+                            System.out.println("Please enter a valid Room.");
+                        } 
+                        s.close();
+                    }
+                        
+                    while (!validWeapon) {
+                        System.out.println(player.toString() + " enter the accused weapon");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("candlestick") || 
+                            input.equalsIgnoreCase("dagger") || 
+                            input.equalsIgnoreCase("leadpipe") || 
+                            input.equalsIgnoreCase("revolver") || 
+                            input.equalsIgnoreCase("rope") || 
+                            input.equalsIgnoreCase("spanner")) 
+                        {
+                            accusedWeapon = input;
+                            validWeapon = true;
+                        } else {
+                            System.out.println("Please enter a valid Weapon.");
+                        } 
+                        s.close();
+                    }
+                            
+                    while (!validChar) {
+                        System.out.println(player.toString() + " enter the accused Character");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("missscarlett") || 
+                            input.equalsIgnoreCase("colonelmustard") || 
+                            input.equalsIgnoreCase("mrswhite") || 
+                            input.equalsIgnoreCase("mrsgreen") || 
+                            input.equalsIgnoreCase("mrspeacock") || 
+                            input.equalsIgnoreCase("professorplum")) 
+                        {
+                            accusedCharacter = input;
+                            validChar = true;
+                        } else {
+                            System.out.println("Please enter a valid Character.");
+                        } 
+                        s.close();
+                    }
+                    
+                    //break loop
+                    if(validRoom && validWeapon && validChar){
+                        validSug = true;   
+                        boolean disproved = false;
+                        
+                        //respond to suggestion
+                        //========================================================================================================
+                        if(//other players have [accusedRoom,accusedWeapon,accusedCharacter]){
+                            //HOW TO IMPLEMENT?????
+                            //HOW TO CHECK OTHER PLAYERS HAND?
+                            //AUTOMATIC CHECK THEN REVEAL?
+                            //OR GIVE CONTROL TO THAT PLAYER AND THEY CHOOSE WHICH CARD TO REVEAL IF SAY THEY HAVE MORE THAN 1 OF THE SUGGESTED CARDS????
+                            //========================================================================================================
+                            disproved = true;
+                        }
+                            
+                        if(disproved){
+                            //check opponents hand for card
+                           System.out.println("[player] + contains suggested + [card]");
+                        }
+                        else{
+                            System.out.println("No player has the suggested cards");
+                        }
+                    }
+                        
+            }
                 
             }
             //----------------------------------------------
             if (input.equals("A")) {
                 // Make an accusation
-                validAcc    = false;
-                validRoom   = false;
-                validWeapon = false;
-                validChar   = false;
+                boolean validAcc    = false;
+                boolean validRoom   = false;
+                boolean validWeapon = false;
+                boolean validChar   = false;
                 
                 //check valid input
                 while (!validAcc) {
