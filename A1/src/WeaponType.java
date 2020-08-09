@@ -6,6 +6,6 @@ public enum WeaponType {
     DAGGER      {public String toString(){return "Dagger";}},
     LEADPIPE    {public String toString(){return "Lead Pipe";}},
     REVOLVER    {public String toString(){return "Revolver";}},
-    ROPER       {public String toString(){return "Rope";}},
+    ROPE        {public String toString(){return "Rope";}},
     SPANNER     {public String toString(){return "Spanner";}},
 }
