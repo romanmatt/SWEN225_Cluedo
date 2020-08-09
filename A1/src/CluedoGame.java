@@ -243,7 +243,7 @@ public class CluedoGame {
                             input.equalsIgnoreCase("kitchen")) 
                         {
                             accusedRoom = input;
-                            validInput = true;
+                            validRoom = true;
                         } else {
                             System.out.println("Please enter a valid Room.");
                         } 
@@ -251,11 +251,41 @@ public class CluedoGame {
                     }
                         
                     while (!validWeapon) {
-                        
+                        System.out.println(player.toString() + " enter the accused weapon");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("candlestick") || 
+                            input.equalsIgnoreCase("dagger") || 
+                            input.equalsIgnoreCase("leadpipe") || 
+                            input.equalsIgnoreCase("revolver") || 
+                            input.equalsIgnoreCase("rope") || 
+                            input.equalsIgnoreCase("spanner")) 
+                        {
+                            accusedWeapon = input;
+                            validWeapon = true;
+                        } else {
+                            System.out.println("Please enter a valid Weapon.");
+                        } 
+                        s.close();
                     }
                             
                     while (!validChar) {
-                        
+                        System.out.println(player.toString() + " enter the accused Character");
+                        Scanner s = new Scanner(System.in);
+                        input = s.next();
+                        if (input.equalsIgnoreCase("missscarlett") || 
+                            input.equalsIgnoreCase("colonelmustard") || 
+                            input.equalsIgnoreCase("mrswhite") || 
+                            input.equalsIgnoreCase("mrsgreen") || 
+                            input.equalsIgnoreCase("mrspeacock") || 
+                            input.equalsIgnoreCase("professorplum")) 
+                        {
+                            accusedCharacter = input;
+                            validChar = true;
+                        } else {
+                            System.out.println("Please enter a valid Character.");
+                        } 
+                        s.close();
                     }
                     
                     //break loop
