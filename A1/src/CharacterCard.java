@@ -11,7 +11,7 @@ class CharacterCard implements Card {
     }
     
     /** Setter */
-    public CharacterType setCharacter (CharacterType character){
+    public void setCharacter (CharacterType character){
         this.character = character;   
     }
     
@@ -21,7 +21,7 @@ class CharacterCard implements Card {
     }
 
     /** Remove */
-    public CharacterType removeCharacter() {
+    public void removeCharacter() {
         this.character = null;
     }
 
