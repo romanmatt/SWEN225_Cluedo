@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class Board {
     private Cell[][] board;
@@ -14,31 +15,31 @@ public class Board {
 
     String initialCellBoard =
 
-            ".........W....G........." +
-            "KKKKKK....AAAA....CCCCCC" +
-            "KKKKKK..AAAAAAAA..CCCCCC" +
-            "KKKKKK..AAAAAAAA..CCCCCC"+
-            "KKKKKK..AAAAAAAA..+CCCCC"+
-            "KKKKKK..+AAAAAA+...CCCC."+
-            ".KKKK+..AAAAAAAA........"+
-            "........A+AAAA+A.......E"+
-            "..................BBBBBB"+
-            "DDDDDDDD..........+BBBBB"+
-            "DDDDDDDD..........BBBBBB"+
-            "DDDDDDD+..........BBBBBB"+
-            "DDDDDDDD..........BBBB+B"+
-            "DDDDDDDD................"+
-            "DDDDDDDD..........LL+LL."+
-            "DDDDDD+D.........LLLLLLL"+
-            ".................+LLLLLL"+
-            "M................LLLLLLL"+
-            ".........HH++HH...LLLLL."+
-            "OOOOOO+..HHHHHH........P"+
-            "OOOOOOO..HHHHH+........."+
-            "OOOOOOO..HHHHHH..+SSSSSS"+
-            "OOOOOOO..HHHHHH..SSSSSSS"+
-            "OOOOOOO..HHHHHH..SSSSSSS"+
-            "OOOOOO.R.HHHHHH...SSSSSS";
+    		 ".........W....G.........\n" +
+    		            "KKKKKK....AAAA....CCCCCC\n" +
+    		            "KKKKKK..AAAAAAAA..CCCCCC\n" +
+    		            "KKKKKK..AAAAAAAA..CCCCCC\n"+
+    		            "KKKKKK..AAAAAAAA..+CCCCC\n"+
+    		            "KKKKKK..+AAAAAA+...CCCC.\n"+
+    		            ".KKKK+..AAAAAAAA........\n"+
+    		            "........A+AAAA+A.......E\n"+
+    		            "..................BBBBBB\n"+
+    		            "DDDDDDDD..........+BBBBB\n"+
+    		            "DDDDDDDD..........BBBBBB\n"+
+    		            "DDDDDDD+..........BBBBBB\n"+
+    		            "DDDDDDDD..........BBBB+B\n"+
+    		            "DDDDDDDD................\n"+
+    		            "DDDDDDDD..........LL+LL.\n"+
+    		            "DDDDDD+D.........LLLLLLL\n"+
+    		            ".................+LLLLLL\n"+
+    		            "M................LLLLLLL\n"+
+    		            ".........HH++HH...LLLLL.\n"+
+    		            "OOOOOO+..HHHHHH........P\n"+
+    		            "OOOOOOO..HHHHH+.........\n"+
+    		            "OOOOOOO..HHHHHH..+SSSSSS\n"+
+    		            "OOOOOOO..HHHHHH..SSSSSSS\n"+
+    		            "OOOOOOO..HHHHHH..SSSSSSS\n"+
+    		            "OOOOOO.R.HHHHHH...SSSSSS\n";
 
     public final String draw() {
         return null;
@@ -60,6 +61,7 @@ public class Board {
     // O = Lounge
     // D = Dining Room
     // K = Kitchen
+    // U = Cellar
     // . = Hallways
     // + = Door
     // \n = Newline
@@ -107,6 +109,9 @@ public class Board {
         }
         if (cell == 'K') {
             return parseKitchen(x, y);
+        }
+        if (cell == 'U') {
+        	return parseCellar(x, y);
         }
         if (cell == '.') {
             return parseHallway(x, y);
@@ -161,6 +166,10 @@ public class Board {
         return new RoomCell(x, y, RoomType.BALLROOM, this);
     }
     
+    private Cell parseCellar(int x, int y) {
+    	return new XCell(x, y);
+    }
+    
     public Cell getCell(int x, int y) {
     	return board[x][y];
     }
@@ -207,13 +216,70 @@ public class Board {
     	    	}
     		}
     	}
+    	// Alt: Target cell is an occupied Hallway Cell
+    	if (target.getClass() == HallwayCell.class && target.getPlayer() != null) {
+    		return false;
+    	}
     	// Alt: Path finding
     	ArrayList<Cell> path = new ArrayList<Cell>();
-    	// TODO continue from here
-	    
-	    
-	    
-	    
+    	// Fringe is a priority queue based on the number of steps taken
+    	PriorityQueue<Fringe> fringe = new PriorityQueue<Fringe>();
+    	fringe.add(new Fringe(pos));
+    	while (!fringe.isEmpty()) {
+    		Cell current = fringe.peek().cell;
+    		// Expand the fringe by looking for movable cells in the four cardinal directions
+    		// x - 1
+    		if (current.getX() > 0) {
+    			if (board[current.getX() - 1][current.getY()].equals(target)) {
+    				if (fringe.peek().steps + 1 <= roll) {
+    					return true;
+    				}
+    			}
+    			if (board[current.getX() - 1][current.getY()].getClass() == HallwayCell.class) {
+    				fringe.add(new Fringe(fringe.peek(), board[current.getX() - 1][current.getY()]));
+    			}
+    			
+    		}
+    		// x + 1
+    		if (current.getX() < 24) {
+    			if (board[current.getX() + 1][current.getY()].equals(target)) {
+    				if (fringe.peek().steps + 1 <= roll) {
+    					return true;
+    				}
+    			}
+    			if (board[current.getX() + 1][current.getY()].getClass() == HallwayCell.class) {
+    				fringe.add(new Fringe(fringe.peek(), board[current.getX() + 1][current.getY()]));
+    			}
+    			
+    		}
+    		// y - 1
+    		if (current.getY() > 0) {
+    			if (board[current.getX()][current.getY() - 1].equals(target)) {
+    				if (fringe.peek().steps + 1 <= roll) {
+    					return true;
+    				}
+    			}
+    			if (board[current.getX()][current.getY() - 1].getClass() == HallwayCell.class) {
+    				fringe.add(new Fringe(fringe.peek(), board[current.getX()][current.getY() - 1]));
+    			}
+    			
+    		}
+    		// y + 1
+    		if (current.getY() < 23) {
+    			if (board[current.getX()][current.getY() + 1].equals(target)) {
+    				if (fringe.peek().steps + 1 <= roll) {
+    					return true;
+    				}
+    			}
+    			if (board[current.getX()][current.getY() + 1].getClass() == HallwayCell.class) {
+    				fringe.add(new Fringe(fringe.peek(), board[current.getX()][current.getY() + 1]));
+    			}
+    			
+    		}
+    		fringe.poll();
+    	}
+    	// Went through entire fringe without finding the target, move is invalid
+    	return false;
     }
     
     // Should contain the coords of the doors of each room, and calculates which of those is closer to the given target cell
