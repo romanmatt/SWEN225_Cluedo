@@ -11,7 +11,7 @@ class WeaponCard implements Card {
     }
     
     /** Setter */
-    public WeaponType setWeapon (WeaponType weapon){
+    public void setWeapon (WeaponType weapon){
         this.weapon = weapon;   
     }
     
@@ -21,7 +21,7 @@ class WeaponCard implements Card {
     }
 
     /** Remove */
-    public WeaponType removeWeapon() {
+    public void removeWeapon() {
         this.weapon = null;
     }
 
