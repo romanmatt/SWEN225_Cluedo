@@ -9,27 +9,19 @@ public class XCell implements Cell {
 		this.y = y;
 	}
 
-	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
 		return x;
 	}
 
-	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
 		return y;
 	}
 
-	@Override
 	public Player getPlayer() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public RoomType getType() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
