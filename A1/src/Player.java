@@ -21,6 +21,10 @@ public class Player {
 
     /* Helper methods */
 
+    public void addToHand(Card c) {
+    	hand.add(c);
+    }	
+	
     public int getX() {
   		return cell.getX();
   	}
