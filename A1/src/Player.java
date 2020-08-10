@@ -40,6 +40,15 @@ public class Player {
   	public RoomType getRoom() {
   		return room;
   	}
+	
+	public void move(Cell c) {
+    	if (c.getClass() == RoomCell.class) {
+    		playersRoom = (RoomCell) c;
+    	} else {
+    		playersRoom = null;
+    	}
+    	cell = c;
+    }
 
     public CharacterType getName(){
         return this.playersCharacter;
