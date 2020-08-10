@@ -54,7 +54,12 @@ public class HallwayCell implements Cell {
 	 * Return player token if occupied
 	 */
 	public String toString(){
-		
+		if(isOccupied()){
+			return getPlayer().toString();
+		}
+		else{
+			return ".";
+		}
 	}
 	
 }
