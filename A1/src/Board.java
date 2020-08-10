@@ -819,6 +819,22 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("LLLLLLL");
 		
 	// Board row 19
+	x = 0;
+	while (x < 9) {
+    		output.append(board[x][18].toString());
+    		x ++;
+    	}	
+	output.append("HH++HH");
+	x = 15;
+	while (x < 18) {
+    		output.append(board[x][18].toString());
+    		x ++;
+    	}	
+	output.append("LLLLL");
+	output.append(board[x][24].toString());
+		
+	// Board row 20
+	
 		
     }
 	/**
