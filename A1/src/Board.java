@@ -47,15 +47,15 @@ public class Board {
     }
 
     public Board() {
-    	ballroom = new Room();
-    	conservatory = new Room();
-    	billiard = new Room();
-    	library = new Room();
-    	study = new Room();
-    	hall = new Room();
-    	lounge = new Room();
-    	dining = new Room();
-    	kitchen = new Room();
+    	ballroom = new Room(RoomType.BALLROOM);
+    	conservatory = new Room(RoomType.CONSERVATORY);
+    	billiard = new Room(RoomType.BILLIARDROOM);
+    	library = new Room(RoomType.LIBRARY);
+    	study = new Room(RoomType.STUDY);
+    	hall = new Room(RoomType.HALL);
+    	lounge = new Room(RoomType.LOUNGE);
+    	dining = new Room(RoomType.DININGROOM);
+    	kitchen = new Room(RoomType.KITCHEN);
     	rooms = new ArrayList<Room>();
     	rooms.add(ballroom);
     	rooms.add(conservatory);
@@ -93,7 +93,7 @@ public class Board {
         			if (room == RoomType.CONSERVATORY) {
         				conservatory.addDoor((DoorCell) door);
         			}
-        			if (room == RoomType.BILLIARD) {
+        			if (room == RoomType.BILLIARDROOM) {
         				billiard.addDoor((DoorCell) door);
         			}
         			if (room == RoomType.LIBRARY) {
@@ -108,7 +108,7 @@ public class Board {
         			if (room == RoomType.LOUNGE) {
         				lounge.addDoor((DoorCell) door);
         			}
-        			if (room == RoomType.DINING) {
+        			if (room == RoomType.DININGROOM) {
         				dining.addDoor((DoorCell) door);
         			}
         			if (room == RoomType.KITCHEN) {
@@ -207,7 +207,7 @@ public class Board {
     }
 
     private Cell parseDining(int x, int y) {
-        return new RoomCell(x, y, RoomType.DINING, this);
+        return new RoomCell(x, y, RoomType.DININGROOM, this);
     }
 
     private Cell parseLounge(int x, int y) {
@@ -227,7 +227,7 @@ public class Board {
     }
 
     private Cell parseBilliard(int x, int y) {
-        return new RoomCell(x, y, RoomType.BILLIARD, this);
+        return new RoomCell(x, y, RoomType.BILLIARDROOM, this);
     }
 
     private Cell parseConservatory(int x, int y) {
@@ -280,10 +280,10 @@ public class Board {
     	    	if (target.getType() == RoomType.KITCHEN && pos.getType() == RoomType.LIBRARY) {
     	    		return true;
     	    	}
-    	    	if (pos.getType() == RoomType.STUDY && target.getType() == RoomType.BILLIARD) {
+    	    	if (pos.getType() == RoomType.STUDY && target.getType() == RoomType.BILLIARDROOM) {
     	    		return true;
     	    	}
-    	    	if (target.getType() == RoomType.STUDY && pos.getType() == RoomType.BILLIARD) {
+    	    	if (target.getType() == RoomType.STUDY && pos.getType() == RoomType.BILLIARDROOM) {
     	    		return true;
     	    	}
     		}
@@ -375,7 +375,7 @@ public class Board {
     			}
     		}
 		}
-		if (room == RoomType.BILLIARD) {
+		if (room == RoomType.BILLIARDROOM) {
 			for (DoorCell c : billiard.getDoors()) {
     			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
     			if (cost < lowestDirectCost) {
@@ -420,7 +420,7 @@ public class Board {
     			}
     		}
 		}
-		if (room == RoomType.DINING) {
+		if (room == RoomType.DININGROOM) {
 			for (DoorCell c : dining.getDoors()) {
     			int cost = Math.abs(c.getX() - target.getX()) + Math.abs(c.getY() - target.getY());
     			if (cost < lowestDirectCost) {
@@ -638,7 +638,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	StringBuilder output = new StringBuilder();
     	// Board row 1
     	int x = 0;
-    	while (x < 24) {
+    	while (x < 25) {
     		output.append(board[x][0].toString());
     		x ++;
     	}
@@ -715,7 +715,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		x ++;
     	}
     	output.append("CCCC");
-    	output.append(board[23][5].toString());
+    	output.append(board[24][5].toString());
     	output.append("\n");
     	// Board row 7
     	output.append(board[0][6].toString());
@@ -727,7 +727,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
     	output.append("A      A");
     	x = 16;
-    	while (x < 24) {
+    	while (x < 25) {
     		output.append(board[x][6].toString());
     		x ++;
     	}
@@ -740,7 +740,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
     	output.append("A+AAAA+A");
     	x = 16;
-    	while (x < 24) {
+    	while (x < 25) {
     		output.append(board[x][7].toString());
     		x ++;
     	}
@@ -791,7 +791,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	// Board row 14
 	output.append("D      D");
 	x = 8;
-    	while (x < 24) {
+    	while (x < 25) {
     		output.append(board[x][13].toString());
     		x ++;
     	}
@@ -804,7 +804,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		x ++;
     	}
 	output.append("LL+LL");
-	output.append(board[23][14].toString());
+	output.append(board[24][14].toString());
     	output.append("\n");
 	// Board row 16	
 	output.append("DDDDDD+D");
