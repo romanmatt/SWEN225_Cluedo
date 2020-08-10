@@ -608,7 +608,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     				"..................BBBBBB\n"+//done
     				"DDDDDDDD..........+BBBBB\n"+//done
     				"DDDDDDDD..........BBBBBB\n"+//done
-    				"DDDDDDD+..........BBBBBB\n"+
+    				"DDDDDDD+..........BBBBBB\n"+//done
     				"DDDDDDDD..........BBBB+B\n"+
     				"DDDDDDDD................\n"+
     				"DDDDDDDD..........LL+LL.\n"+
@@ -743,7 +743,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("DDDDDDDD");
 	x = 8;
     	while (x < 18) {
-    		output.append(board[x][8].toString());
+    		output.append(board[x][9].toString());
     		x ++;
     	}
 	output.append("+BBBBB");
@@ -752,7 +752,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	output.append("DDDDDDDD");
 	x = 8;
     	while (x < 18) {
-    		output.append(board[x][8].toString());
+    		output.append(board[x][10].toString());
     		x ++;
     	}
 	output.append("BBBBBB");
@@ -761,10 +761,30 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("DDDDDDD+");
 	x = 8;
     	while (x < 18) {
-    		output.append(board[x][8].toString());
+    		output.append(board[x][11].toString());
     		x ++;
     	}
 	output.append("BBBBBB");
+		
+	// Board row 13
+	output.append("DDDDDDDD");
+	x = 8;
+    	while (x < 18) {
+    		output.append(board[x][12].toString());
+    		x ++;
+    	}
+	output.append("BBBB+B");
+		
+	// Board row 14
+	output.append("DDDDDDDD");
+	x = 8;
+    	while (x < 25) {
+    		output.append(board[x][12].toString());
+    		x ++;
+    	}
+		
+	// Board row 15
+		
     	
     }
 	/**
