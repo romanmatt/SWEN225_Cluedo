@@ -87,7 +87,7 @@ public class Room {
 			break;
 		case BILLIARDROOM:
 			if (row == 2) {
-				String characters = "B";
+				String characters = "+";
 				int x = 0;
 				while (x < 4) {
 					if (x < this.characters.size()) {
@@ -197,10 +197,10 @@ public class Room {
 						row3 = row3 + " ";
 						x --;
 					}
-					row3 = row3 + "D";
+					row3 = row3 + "+";
 					return row3;
 				} else {
-					return "D      D";
+					return "D      +";
 				}
 			}
 			break;
@@ -237,10 +237,10 @@ public class Room {
 						row3 = row3 + " ";
 						x --;
 					}
-					row3 = row3 + "H";
+					row3 = row3 + "+";
 					return row3;
 				} else {
-					return "H    H";
+					return "H    +";
 				}
 			}
 			break;
@@ -304,7 +304,7 @@ public class Room {
 			}
 			if (row == 3) {
 				if (characters.size() > 5) {
-					String row3 = "L";
+					String row3 = "+";
 					int x = 5;
 					while (x < 10) {
 						if (x < characters.size()) {
@@ -320,7 +320,7 @@ public class Room {
 					row3 = row3 + "L";
 					return row3;
 				} else {
-					return "L    L";
+					return "+    L";
 				}
 			}
 			break;
