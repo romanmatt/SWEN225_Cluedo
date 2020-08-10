@@ -40,4 +40,26 @@ class CharacterCard implements Card {
         CharacterCard other = (CharacterCard) o;
         return this.character == other.character;
     }
+    
+    /** To String */
+    public String toString(){
+        if(getCharacter() instanceof CharacterType.MISSSCARLETT){
+            return "Miss Scarlett";
+        }
+        if(getCharacter() instanceof CharacterType.COLONELMUSTARD){
+            return "Colonel Mustard";
+        }
+        if(getCharacter() instanceof CharacterType.MRSWHITE){
+            return "Mrs. White";
+        }
+        if(getCharacter() instanceof CharacterType.MRGREEN){
+            return "Mr. Green";
+        }
+        if(getCharacter() instanceof CharacterType.MRSPEACOCK){
+            return "Mrs. Peacock";
+        }
+        if(getCharacter() instanceof CharacterType.PROFESSORPLUM){
+            return "Professor Plum";
+        }
+    }
 }
