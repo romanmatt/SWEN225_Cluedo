@@ -12,6 +12,7 @@ public class Board {
     Room lounge;
     Room dining;
     Room kitchen;
+    ArrayList<Room> rooms;
 
      String initialCellBoard =
 
@@ -55,6 +56,16 @@ public class Board {
     	lounge = new Room();
     	dining = new Room();
     	kitchen = new Room();
+    	rooms = new ArrayList<Room>();
+    	rooms.add(ballroom);
+    	rooms.add(conservatory);
+    	rooms.add(billiard);
+    	rooms.add(library);
+    	rooms.add(study);
+    	rooms.add(hall);
+    	rooms.add(lounge);
+    	rooms.add(dining);
+    	rooms.add(kitchen);
     	board = parseBoard(initialCellBoard);
     	int x = 0;
     	int y = 0;
