@@ -43,32 +43,24 @@ class WeaponCard implements Card {
     
     /** To String */
     public String toString(){
-        if(getWeapon() instanceof RoomType.BALLROOM){
-            return "Ballroom";
+        if(getWeapon() instanceof WeaponType.CANDLESTICK){
+            return "Candlestick";
         }
-        if(getWeapon() instanceof RoomType.CONSERVATORY){
-            return "Conservatory";
+        if(getWeapon() instanceof WeaponType.DAGGER){
+            return "Dagger";
         }
-        if(getWeapon() instanceof RoomType.BILLIARDROOM){
-            return "Billiard Room";
+        if(getWeapon() instanceof WeaponType.LEADPIPE){
+            return "Lead Pipe";
         }
-        if(getWeapon() instanceof RoomType.LIBRARY){
-            return "Library";
+        if(getWeapon() instanceof WeaponType.REVOLVER){
+            return "Revolver";
         }
-        if(getWeapon() instanceof RoomType.STUDY){
-            return "Study";
+        if(getWeapon() instanceof WeaponType.ROPE){
+            return "Rope";
         }
-        if(getWeapon() instanceof RoomType.HALL){
-            return "Hall";
+        if(getWeapon() instanceof WeaponType.SPANNER){
+            return "Spanner";
         }
-        if(getWeapon() instanceof RoomType.LOUNGE){
-            return "Lounge";
-        }
-        if(getWeapon() instanceof RoomType.DININGROOM){
-            return "Dining Room";
-        }
-        if(getWeapon() instanceof RoomType.KITCHEN){
-            return "Kitchen";
-        }     
     }
+
 }
