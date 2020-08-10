@@ -43,9 +43,9 @@ public class Player {
 	
 	public void move(Cell c) {
     	if (c.getClass() == RoomCell.class) {
-    		playersRoom = (RoomCell) c;
+    		room = c.getType();
     	} else {
-    		playersRoom = null;
+    		room = null;
     	}
     	cell = c;
     }
@@ -62,7 +62,7 @@ public class Player {
     	if (playersCharacter == CharacterType.COLONELMUSTARD) {
     		return "Colonel Mustard";
     	}
-    	if (playersCharacter == CharacterType.MISSSCARLET) {
+    	if (playersCharacter == CharacterType.MISSSCARLETT) {
     		return "Miss Scarlet";
     	}
     	if (playersCharacter == CharacterType.MRSWHITE) {
