@@ -1,14 +1,14 @@
 public interface Cell {
-    private int x;
-    private int y;
+    int x = 0;
+    int y = 0;
     int getXPos = 0;
     int getYPos = 0;
     
-    public int getX() {
+    public default int getX() {
         return x;
     }
     
-    public int getY() {
+    public default int getY() {
         return y;
     }
     
