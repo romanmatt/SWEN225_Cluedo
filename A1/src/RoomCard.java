@@ -40,4 +40,9 @@ class RoomCard implements Card {
         RoomCard other = (RoomCard) o;
         return this.room == other.room;
     }
+    
+    /** To String */
+    public String toString(){
+        
+    }
 }
