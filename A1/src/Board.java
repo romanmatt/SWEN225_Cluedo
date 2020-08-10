@@ -746,28 +746,28 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][9].toString());
     		x ++;
     	}
-	output.append("+BBBBB");
+	output.append("+    B");
 	output.append("\n");	
 	// Board row 11
-    	output.append("DDDDDDDD");
+    	output.append("D      D");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][10].toString());
     		x ++;
     	}
-	output.append("BBBBBB");
+	output.append("B    B");
 	output.append("\n");	
 	// Board row 12
-	output.append("DDDDDDD+");
+	output.append("D      +");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][11].toString());
     		x ++;
     	}
-	output.append("BBBBBB");
+	output.append("B    B");
 	output.append("\n");	
 	// Board row 13
-	output.append("DDDDDDDD");
+	output.append("D      D");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][12].toString());
@@ -776,7 +776,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("BBBB+B");
 	output.append("\n");	
 	// Board row 14
-	output.append("DDDDDDDD");
+	output.append("D      D");
 	x = 8;
     	while (x < 25) {
     		output.append(board[x][13].toString());
@@ -784,7 +784,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
 	output.append("\n");	
 	// Board row 15
-	output.append("DDDDDDDD");
+	output.append("D      D");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][14].toString());
@@ -800,7 +800,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][15].toString());
     		x ++;
     	}
-	output.append("LLLLLLL");
+	output.append("L     L");
 	output.append("\n");	
 	// Board row 17
 	x = 0;
@@ -808,7 +808,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][16].toString());
     		x ++;
     	}	
-	output.append("+LLLLLL");	
+	output.append("+     L");	
 	output.append("\n");	
 	// Board row 18
 	x = 0;
@@ -816,7 +816,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][17].toString());
     		x ++;
     	}	
-	output.append("LLLLLLL");
+	output.append("L     L");
 	output.append("\n");	
 	// Board row 19
 	x = 0;
@@ -837,7 +837,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("OOOOOO+");
 	output.append(board[8][19].toString());
 	output.append(board[9][19].toString());
-	output.append("HHHHHH");
+	output.append("H    H");
 	x = 15;
 	while (x < 24) {
     		output.append(board[x][19].toString());
@@ -845,10 +845,10 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
 	output.append("\n");	
 	// Board row 21
-	output.append("OOOOOOO");
+	output.append("O     O");
 	output.append(board[8][20].toString());
 	output.append(board[9][20].toString());
-	output.append("HHHHH+");
+	output.append("H    +");
 	x = 15;
 	while (x < 24) {
     		output.append(board[x][20].toString());
@@ -856,10 +856,10 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}	
 	output.append("\n");
 	// Board row 22	
-	output.append("OOOOOOO");
+	output.append("O     O");
 	output.append(board[8][21].toString());
 	output.append(board[9][21].toString());
-	output.append("HHHHHH");
+	output.append("H    H");
 	x = 15;
 	while (x < 17) {
     		output.append(board[x][21].toString());
@@ -868,28 +868,28 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("+SSSSSS");
 	output.append("\n");	
 	// Board row 23
-	output.append("OOOOOOO");
+	output.append("O     O");
 	output.append(board[8][22].toString());
 	output.append(board[9][22].toString());
-	output.append("HHHHHH");
+	output.append("H    H");
 	x = 15;
 	while (x < 17) {
     		output.append(board[x][22].toString());
     		x ++;
     	}	
-	output.append("SSSSSSS");
+	output.append("S     S");
 	output.append("\n");	
 	// Board row 24	
-	output.append("OOOOOOO");
+	output.append("O     O");
 	output.append(board[8][23].toString());
 	output.append(board[9][23].toString());
-	output.append("HHHHHH");
+	output.append("H    H");
 	x = 15;
 	while (x < 17) {
     		output.append(board[x][23].toString());
     		x ++;
     	}	
-	output.append("SSSSSSS");
+	output.append("S     S");
 	output.append("\n");	
 	// Board row 25	
 	output.append("OOOOOO");
