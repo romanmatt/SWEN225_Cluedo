@@ -606,8 +606,8 @@ public void moveCharacter(CharacterType c, RoomType r) {
     				".KKKK+..AAAAAAAA........\n"+//done
     				"........A+AAAA+A........\n"+//done
     				"..................BBBBBB\n"+//done
-    				"DDDDDDDD..........+BBBBB\n"+
-    				"DDDDDDDD..........BBBBBB\n"+
+    				"DDDDDDDD..........+BBBBB\n"+//done
+    				"DDDDDDDD..........BBBBBB\n"+//done
     				"DDDDDDD+..........BBBBBB\n"+
     				"DDDDDDDD..........BBBB+B\n"+
     				"DDDDDDDD................\n"+
