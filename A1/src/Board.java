@@ -72,6 +72,7 @@ public class Board {
     	while (y < 25) {
     		x = 0;
     		while (x < 24) {
+			x ++;
         		if (board[x][y].getClass() == DoorCell.class) {
         			Cell door = board[x][y];
         			RoomType room = RoomType.HALL;
