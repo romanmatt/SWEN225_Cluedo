@@ -65,11 +65,11 @@ class RoomCard implements Card {
             return "Lounge";
         }
         if(getRoom() instanceof RoomType.DININGROOM){
-            return "Lounge";
+            return "Dining Room";
         }
         if(getRoom() instanceof RoomType.KITCHEN){
-            return "Lounge";
-        }
-           
+            return "Kitchen";
+        }     
     }
+    
 }
