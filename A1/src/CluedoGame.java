@@ -544,5 +544,10 @@ public class CluedoGame {
     public static void main(String[] args){
         CluedoGame cluedoGame = new CluedoGame();
         cluedoGame.run();
+        cluedoGame.setupCards();
+        cluedoGame.setupPlayers();
+        while (!isGameOver) {
+            cluedoGame.clock();
+        }
     }
 }
