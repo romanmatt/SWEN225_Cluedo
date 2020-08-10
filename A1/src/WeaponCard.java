@@ -4,17 +4,17 @@
  */
 class WeaponCard implements Card {
     WeaponType weapon = null;
-    
+
     /** Constructor */
     public WeaponCard (WeaponType weapon){
-        this.weapon = weapon;   
+        this.weapon = weapon;
     }
-    
+
     /** Setter */
     public void setWeapon (WeaponType weapon){
-        this.weapon = weapon;   
+        this.weapon = weapon;
     }
-    
+
     /** Getter */
     public WeaponType getWeapon() {
         return this.weapon;
@@ -40,27 +40,28 @@ class WeaponCard implements Card {
         WeaponCard other = (WeaponCard) o;
         return this.weapon == other.weapon;
     }
-    
+
     /** To String */
     public String toString(){
-        if(getWeapon() instanceof WeaponType.CANDLESTICK){
+        if(getWeapon().equals(WeaponType.CANDLESTICK)){
             return "Candlestick";
         }
-        if(getWeapon() instanceof WeaponType.DAGGER){
+        if(getWeapon().equals(WeaponType.DAGGER)){
             return "Dagger";
         }
-        if(getWeapon() instanceof WeaponType.LEADPIPE){
+        if(getWeapon().equals(WeaponType.LEADPIPE)){
             return "Lead Pipe";
         }
-        if(getWeapon() instanceof WeaponType.REVOLVER){
+        if(getWeapon().equals(WeaponType.REVOLVER)){
             return "Revolver";
         }
-        if(getWeapon() instanceof WeaponType.ROPE){
+        if(getWeapon().equals(WeaponType.ROPE)){
             return "Rope";
         }
-        if(getWeapon() instanceof WeaponType.SPANNER){
+        if(getWeapon().equals(WeaponType.SPANNER)){
             return "Spanner";
         }
+        return " ";
     }
 
 }
