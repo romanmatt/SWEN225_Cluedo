@@ -40,4 +40,35 @@ class WeaponCard implements Card {
         WeaponCard other = (WeaponCard) o;
         return this.weapon == other.weapon;
     }
+    
+    /** To String */
+    public String toString(){
+        if(getWeapon() instanceof RoomType.BALLROOM){
+            return "Ballroom";
+        }
+        if(getWeapon() instanceof RoomType.CONSERVATORY){
+            return "Conservatory";
+        }
+        if(getWeapon() instanceof RoomType.BILLIARDROOM){
+            return "Billiard Room";
+        }
+        if(getWeapon() instanceof RoomType.LIBRARY){
+            return "Library";
+        }
+        if(getWeapon() instanceof RoomType.STUDY){
+            return "Study";
+        }
+        if(getWeapon() instanceof RoomType.HALL){
+            return "Hall";
+        }
+        if(getWeapon() instanceof RoomType.LOUNGE){
+            return "Lounge";
+        }
+        if(getWeapon() instanceof RoomType.DININGROOM){
+            return "Dining Room";
+        }
+        if(getWeapon() instanceof RoomType.KITCHEN){
+            return "Kitchen";
+        }     
+    }
 }
