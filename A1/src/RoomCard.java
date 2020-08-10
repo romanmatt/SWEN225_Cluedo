@@ -4,17 +4,17 @@
  */
 class RoomCard implements Card {
     RoomType room = null;
-    
+
     /** Constructor */
     public RoomCard (RoomType room){
-        this.room = room;   
+        this.room = room;
     }
-    
+
     /** Setter */
     public void setRoom (RoomType room){
-        this.room = room;   
+        this.room = room;
     }
-    
+
     /** Getter */
     public RoomType getRoom() {
         return this.room;
@@ -40,36 +40,36 @@ class RoomCard implements Card {
         RoomCard other = (RoomCard) o;
         return this.room == other.room;
     }
-    
+
     /** To String */
     public String toString(){
-        if(getRoom() instanceof RoomType.BALLROOM){
+        if(getRoom().equals(RoomType.BALLROOM)){
             return "Ballroom";
         }
-        if(getRoom() instanceof RoomType.CONSERVATORY){
+        if(getRoom().equals(RoomType.CONSERVATORY)){
             return "Conservatory";
         }
-        if(getRoom() instanceof RoomType.BILLIARDROOM){
+        if(getRoom().equals(RoomType.BILLIARDROOM)){
             return "Billiard Room";
         }
-        if(getRoom() instanceof RoomType.LIBRARY){
+        if(getRoom().equals(RoomType.LIBRARY)){
             return "Library";
         }
-        if(getRoom() instanceof RoomType.STUDY){
+        if(getRoom().equals(RoomType.STUDY)){
             return "Study";
         }
-        if(getRoom() instanceof RoomType.HALL){
+        if(getRoom().equals(RoomType.HALL)){
             return "Hall";
         }
-        if(getRoom() instanceof RoomType.LOUNGE){
+        if(getRoom().equals(RoomType.LOUNGE)){
             return "Lounge";
         }
-        if(getRoom() instanceof RoomType.DININGROOM){
+        if(getRoom().equals(RoomType.DININGROOM)){
             return "Dining Room";
         }
-        if(getRoom() instanceof RoomType.KITCHEN){
+        if(getRoom().equals(RoomType.KITCHEN)){
             return "Kitchen";
-        }     
+        }
+        return "";
     }
-    
 }
