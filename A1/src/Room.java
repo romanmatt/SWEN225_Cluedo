@@ -65,4 +65,8 @@ class Room {
             weapons.remove(weapon);
         }
     }
+	
+    public String toString(){
+	    
+    }
 }
