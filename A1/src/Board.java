@@ -430,7 +430,171 @@ public class Board {
 		return closest;
 	}	
 	
-	
+public void moveCharacter(CharacterType c, RoomType r) {
+    	for (Room room : rooms) {
+    		room.removeCharacter(c);
+    	}
+    	if (r == RoomType.BALLROOM) {
+			ballroom.addCharacter(c);
+		}
+		if (r == RoomType.CONSERVATORY) {
+			conservatory.addCharacter(c);
+		}
+		if (r == RoomType.BILLIARDROOM) {
+			billiard.addCharacter(c);
+		}
+		if (r == RoomType.LIBRARY) {
+			library.addCharacter(c);
+		}
+		if (r == RoomType.STUDY) {
+			study.addCharacter(c);
+		}
+		if (r == RoomType.HALL) {
+			hall.addCharacter(c);
+		}
+		if (r == RoomType.LOUNGE) {
+			lounge.addCharacter(c);
+		}
+		if (r == RoomType.DININGROOM) {
+			dining.addCharacter(c);
+		}
+		if (r == RoomType.KITCHEN) {
+			kitchen.addCharacter(c);
+		}
+    }
+    
+    public void movePlayer(Player p, RoomType r) {
+    	// Remove the player from any room they may already be in
+    	if (p.getRoom() == RoomType.BALLROOM) {
+    		ballroom.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.CONSERVATORY) {
+    		conservatory.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.BILLIARDROOM) {
+    		billiard.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.LIBRARY) {
+    		library.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.STUDY) {
+    		study.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.HALL) {
+    		hall.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.LOUNGE) {
+    		lounge.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.DININGROOM) {
+    		dining.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.KITCHEN) {
+    		kitchen.removePlayer(p);
+    	}
+    	// Add the player to their new room
+    	if (r == RoomType.BALLROOM) {
+			ballroom.addPlayer(p);
+			p.move(ballroom.getCells().get(0));
+		}
+		if (r == RoomType.CONSERVATORY) {
+			conservatory.addPlayer(p);
+			p.move(conservatory.getCells().get(0));
+		}
+		if (r == RoomType.BILLIARDROOM) {
+			billiard.addPlayer(p);
+			p.move(billiard.getCells().get(0));
+		}
+		if (r == RoomType.LIBRARY) {
+			library.addPlayer(p);
+			p.move(library.getCells().get(0));
+		}
+		if (r == RoomType.STUDY) {
+			study.addPlayer(p);
+			p.move(study.getCells().get(0));
+		}
+		if (r == RoomType.HALL) {
+			hall.addPlayer(p);
+			p.move(hall.getCells().get(0));
+		}
+		if (r == RoomType.LOUNGE) {
+			lounge.addPlayer(p);
+			p.move(lounge.getCells().get(0));
+		}
+		if (r == RoomType.DININGROOM) {
+			dining.addPlayer(p);
+			p.move(dining.getCells().get(0));
+		}
+		if (r == RoomType.KITCHEN) {
+			kitchen.addPlayer(p);
+			p.move(kitchen.getCells().get(0));
+		}
+    }
+    
+    public void movePlayer(Player p, Cell c) {
+    	// Remove the player from any room they may already be in
+    	if (p.getRoom() == RoomType.BALLROOM) {
+    		ballroom.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.CONSERVATORY) {
+    		conservatory.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.BILLIARDROOM) {
+    		billiard.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.LIBRARY) {
+    		library.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.STUDY) {
+    		study.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.HALL) {
+    		hall.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.LOUNGE) {
+    		lounge.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.DININGROOM) {
+    		dining.removePlayer(p);
+    	}
+    	if (p.getRoom() == RoomType.KITCHEN) {
+    		kitchen.removePlayer(p);
+    	}
+    	// Move the player
+    	p.move(c);
+    	// If they're in a room now, add them to it
+    	if (c.getClass() == RoomCell.class || c.getClass() == DoorCell.class) {
+    		if (c.getType() == RoomType.BALLROOM) {
+    			ballroom.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.CONSERVATORY) {
+    			conservatory.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.BILLIARDROOM) {
+    			billiard.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.LIBRARY) {
+    			library.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.STUDY) {
+    			study.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.HALL) {
+    			hall.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.LOUNGE) {
+    			lounge.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.DININGROOM) {
+    			dining.addPlayer(p);
+    		}
+    		if (c.getType() == RoomType.KITCHEN) {
+    			kitchen.addPlayer(p);
+    		}
+    	} else {
+    		((HallwayCell) c).placePlayer(p);
+    	}
+    }
 	/**
      * toString method to print out board text
      * */
