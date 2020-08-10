@@ -45,4 +45,140 @@ public class Room {
 	public RoomType getType() {
 		return roomType;
 	}
+	
+	public String toString(int row) {
+		switch (roomType) {
+		case BALLROOM:
+			if (row == 2) {
+				String characters = "AA";
+				int x = 0;
+				while (x < 4) {
+					if (x < this.characters.size()) {
+						characters = characters + this.characters.get(x).toString();
+					}
+					x ++;
+				}
+				x = 4 - this.characters.size();
+				while (x > 0) {
+					characters = characters + " ";
+				}
+				characters = characters + "AA";
+				return characters;
+			}
+			if (row == 3) {
+				if (characters.size() > 4) {
+					String row3 = "A";
+					int x = 4;
+					while (x < characters.size()) {
+						row3 = row3 + characters.get(x).toString();
+						x ++;
+					}
+					x = 10 - characters.size();
+					while (x > 0) {
+						row3 = row3 + " ";
+						x --;
+					}
+					row3 = row3 + "A";
+					return row3;
+				} else {
+					return "A      A";
+				}
+			}
+			break;
+		case BILLIARDROOM:
+			break;
+		case CONSERVATORY:
+			if (row == 2) {
+				String characters = "C";
+				int x = 0;
+				while (x < 4) {
+					if (x < this.characters.size()) {
+						characters = characters + this.characters.get(x).toString();
+					}
+					x ++;
+				}
+				x = 4 - this.characters.size();
+				while (x > 0) {
+					characters = characters + " ";
+				}
+				characters = characters + "C";
+				return characters;
+			}
+			if (row == 3) {
+				if (characters.size() > 4) {
+					String row3 = "C";
+					int x = 4;
+					while (x < 8) {
+						if (x < characters.size()) {
+							row3 = row3 + characters.get(x).toString();
+						}
+						x ++;
+					}
+					x = 8 - characters.size();
+					while (x > 0) {
+						row3 = row3 + " ";
+						x --;
+					}
+					row3 = row3 + "C";
+					return row3;
+				} else {
+					return "C    C";
+				}
+			}
+			break;
+		case DININGROOM:
+			break;
+		case HALL:
+			break;
+		case KITCHEN:
+			if (row == 2) {
+				String characters = "K";
+				int x = 0;
+				while (x < 4) {
+					if (x < this.characters.size()) {
+						characters = characters + this.characters.get(x).toString();
+					}
+					x ++;
+				}
+				x = 4 - this.characters.size();
+				while (x > 0) {
+					characters = characters + " ";
+					x --;
+				}
+				characters = characters + "K";
+				return characters;
+			}
+			if (row == 3) {
+				if (characters.size() > 4) {
+					String row3 = "K";
+					int x = 4;
+					while (x < 8) {
+						if (x < characters.size()) {
+							row3 = row3 + characters.get(x).toString();
+						}
+						x ++;
+					}
+					x = 8 - characters.size();
+					while (x > 0) {
+						row3 = row3 + " ";
+						x --;
+					}
+					row3 = row3 + "K";
+					return row3;
+				} else {
+					return "K    K";
+				}
+			}
+			break;
+		case LIBRARY:
+			break;
+		case LOUNGE:
+			break;
+		case STUDY:
+			break;
+		default:
+			break;
+		
+		}
+	}
 }
