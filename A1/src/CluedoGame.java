@@ -500,7 +500,9 @@ public class CluedoGame {
     	while (!remainingDeck.isEmpty()) {
     		for (Player p : activePlayers) {
     			if (!remainingDeck.isEmpty()) {
-    				p.addToHand(remainingDeck.get(new Random().nextInt(remainingDeck.size())));
+    				Card nextCard = remainingDeck.get(new Random().nextInt(remainingDeck.size()));
+    				remainingDeck.remove(nextCard);
+    				p.addToHand(nextCard);
     			}
     		}
     	}
