@@ -510,7 +510,7 @@ public class CluedoGame {
     public void setupPlayers() {
     	for (Player p : activePlayers) {
     		if (p.getName() == CharacterType.MISSSCARLETT) {
-    			((HallwayCell) board.board[7][23]).placePlayer(p);
+    			((HallwayCell) board.board[7][24]).placePlayer(p);
     		}
     		if (p.getName() == CharacterType.COLONELMUSTARD) {
     			((HallwayCell) board.board[0][17]).placePlayer(p);
@@ -522,10 +522,10 @@ public class CluedoGame {
     			((HallwayCell) board.board[14][0]).placePlayer(p);
     		}
     		if (p.getName() == CharacterType.MRSPEACOCK) {
-    			((HallwayCell) board.board[24][7]).placePlayer(p);
+    			((HallwayCell) board.board[23][7]).placePlayer(p);
     		}
     		if (p.getName() == CharacterType.PROFESSORPLUM) {
-    			((HallwayCell) board.board[24][19]).placePlayer(p);
+    			((HallwayCell) board.board[23][19]).placePlayer(p);
     		}
     	}
     }
