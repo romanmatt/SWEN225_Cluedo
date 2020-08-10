@@ -1,3 +1,4 @@
+
 public class DoorCell implements Cell {
 
 	private int x;
@@ -22,6 +23,7 @@ public class DoorCell implements Cell {
 	}
 
 	public RoomType getType() {
-		return null;
+		return room.getType();
 	}
+
 }
