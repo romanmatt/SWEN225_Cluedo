@@ -58,9 +58,9 @@ public class Board {
     	board = parseBoard(initialCellBoard);
     	int x = 0;
     	int y = 0;
-    	while (y < 24) {
+    	while (y < 25) {
     		x = 0;
-    		while (x < 25) {
+    		while (x < 24) {
         		if (board[x][y].getClass() == DoorCell.class) {
         			Cell door = board[x][y];
         			RoomType room = RoomType.HALL;
@@ -595,8 +595,10 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		((HallwayCell) c).placePlayer(p);
     	}
     }
-	
-	public String draw() {
+	/**
+     	 * toString method to print out board text
+     	 **/
+	public String toString() {
     	String base = "........................\n" +//done
     				"KKKKKK....AAAA....CCCCCC\n" +//done
     				"KKKKKK..AAAAAAAA..CCCCCC\n" +//done
@@ -746,19 +748,19 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][9].toString());
     		x ++;
     	}
-	output.append(billiard.toString(2)); // add door to room.toString
+	output.append("+    B");
 	output.append("\n");	
 	// Board row 11
-    	output.append(dining.toString(2));
+    	output.append("D      D");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][10].toString());
     		x ++;
     	}
-	output.append(billiard.toString(3));
+	output.append("B    B");
 	output.append("\n");	
 	// Board row 12
-	output.append(dining.toString(3)); // add door to room.toString
+	output.append("D      +");
 	x = 8;
     	while (x < 18) {
     		output.append(board[x][11].toString());
@@ -800,7 +802,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][15].toString());
     		x ++;
     	}
-	output.append(library.toString(2));
+	output.append("L     L");
 	output.append("\n");	
 	// Board row 17
 	x = 0;
@@ -808,7 +810,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][16].toString());
     		x ++;
     	}	
-	output.append(library.toString(3)); //add door to room.toString	
+	output.append("+     L");	
 	output.append("\n");	
 	// Board row 18
 	x = 0;
@@ -837,7 +839,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("OOOOOO+");
 	output.append(board[8][19].toString());
 	output.append(board[9][19].toString());
-	output.append(hall.toString(2));
+	output.append("H    H");
 	x = 15;
 	while (x < 24) {
     		output.append(board[x][19].toString());
@@ -845,10 +847,10 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
 	output.append("\n");	
 	// Board row 21
-	output.append(lounge.toString(2));
+	output.append("O     O");
 	output.append(board[8][20].toString());
 	output.append(board[9][20].toString());
-	output.append(hall.toString(3)); //add door to room.toString
+	output.append("H    +");
 	x = 15;
 	while (x < 24) {
     		output.append(board[x][20].toString());
@@ -856,7 +858,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}	
 	output.append("\n");
 	// Board row 22	
-	output.append(lounge.toString(3));
+	output.append("O     O");
 	output.append(board[8][21].toString());
 	output.append(board[9][21].toString());
 	output.append("H    H");
@@ -877,13 +879,13 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		output.append(board[x][22].toString());
     		x ++;
     	}	
-	output.append(study.toString(2));
+	output.append("S     S");
 	output.append("\n");	
 	// Board row 24	
 	output.append("O     O");
 	output.append(board[8][23].toString());
 	output.append(board[9][23].toString());
-	output.append(study.toString(3));
+	output.append("H    H");
 	x = 15;
 	while (x < 17) {
     		output.append(board[x][23].toString());
@@ -906,69 +908,8 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}	
 	output.append("SSSSSS");
 		
+	return output.toString();
+		
     }
-	/**
-     * toString method to print out board text
-     * */
-    @Override
-    public String toString() {
-        //Print out Coordinates
-        Cell board[][] = new Cell[25][24];
 
-        //Print col coordinates at x axis
-        StringBuilder stringBuilder = new StringBuilder();
-        char col = 'A';
-        stringBuilder.append("\t\t ");
-        for(int x = 0; x < 24; x++) {
-            stringBuilder.append(col + " ");
-            col++;
-        }
-        stringBuilder.append("/n");
-
-        //Print row coordinates at y axis
-        for(int y = 0; col < board.length; y++ ){
-            if(y < board.length-1 && y != 0 ) {
-                stringBuilder.append("\t"+ y + "\t");
-            } else {
-                stringBuilder.append("\t \t");
-            }
-	//Print off edges of board
-            for(int x = 0; x < board[0].length; x++) {
-                if(x==0)
-                    if(board[y][x] instanceof RoomCell || board[y][x] instanceof HallwayCell)
-                        stringBuilder.append("|");
-                    else
-                        stringBuilder.append(" ");
-
-                    //Print HallwayCell
-                else if(board[y][x] instanceof HallwayCell) {
-                    if(x+1 < board[0].length && (board[y][x+1] instanceof HallwayCell
-                            || (board[y][x+1] instanceof DoorCell))) {
-                        stringBuilder.append(board[y][x].toString() + ".");
-                    } else {
-                        stringBuilder.append(board[y][x].toString() + "|");
-                    }
-                }
-
-                //Room Cell
-                else if(board[y][x] instanceof RoomCell) {
-                    String roomCellString = board[y][x].toString();
-                    stringBuilder.append(roomCellString);
-                    if(roomCellString.length() > 2)
-                        x += (roomCellString.length()/2 - 1);
-                }
-
-                //DoorCell
-                else if(board[y][x] instanceof DoorCell) {
-                    if((board[y][x+1] instanceof HallwayCell)) {
-                        stringBuilder.append("+");
-                    } else {
-                        stringBuilder.append(". ");
-                    }
-                }
-            }
-            stringBuilder.append("\n");
-        }
-        return stringBuilder.toString();
-    }
 }
