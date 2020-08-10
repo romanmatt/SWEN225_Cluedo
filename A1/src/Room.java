@@ -8,6 +8,9 @@ public class Room {
 	
 	public Room(RoomType r) {
 		roomType = r;
+		cells = new ArrayList<Cell>();
+		doors = new ArrayList<DoorCell>();
+		characters = new ArrayList<CharacterType>();
 	}
 	
 	public void addCell(Cell cell) {
