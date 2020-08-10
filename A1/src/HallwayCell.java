@@ -49,4 +49,8 @@ public class HallwayCell implements Cell {
 		return null;
 	}
 	
+	public String toString(){
+		
+	}
+	
 }
