@@ -85,27 +85,27 @@ public class CluedoGame {
                 //Check to see what token is in input
                 //Scarlett
                 if(token[i]=='R'){
-                    player = new Player(CharacterType.MissScarlett);
+                    player = new Player(CharacterType.MISSSCARLETT);
                 }
                 //Mustard
                 else if(token[i]=='M'){
-                    player = new Player(CharacterType.ColonelMustard);
+                    player = new Player(CharacterType.COLONELMUSTARD);
                 }
                 //White
                 else if(token[i]=='W'){
-                    player = new Player(CharacterType.MrsWhite);
+                    player = new Player(CharacterType.MRSWHITE);
                 }
                 //Green
                 else if(token[i]=='G'){
-                    player = new Player(CharacterType.MrGreen);
+                    player = new Player(CharacterType.MRGREEN);
                 }
                 //Peacock
                 else if(token[i]=='E'){
-                    player = new Player(CharacterType.MrsPeacock);
+                    player = new Player(CharacterType.MRSPEACOCK);
                 }
                 //Plum
                 else if(token[i]=='P'){
-                    player = new Player(CharacterType.ProfessorPlum);
+                    player = new Player(CharacterType.PROFESSORPLUM);
                 }
                 else{
                     System.out.print("ERROR: INVALID INPUT./n");
@@ -129,7 +129,9 @@ public class CluedoGame {
             }
         return true;
     }
-
+    
+    
+    
     public boolean accuse(Accusation accusation) {
         if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accusation.accusedCharacter == solutionCharacter) {
             return true;
