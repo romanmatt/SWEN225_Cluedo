@@ -595,6 +595,154 @@ public void moveCharacter(CharacterType c, RoomType r) {
     		((HallwayCell) c).placePlayer(p);
     	}
     }
+	
+	public String draw() {
+    	String base = "........................\n" +//done
+    				"KKKKKK....AAAA....CCCCCC\n" +//done
+    				"KKKKKK..AAAAAAAA..CCCCCC\n" +//done
+    				"KKKKKK..AAAAAAAA..CCCCCC\n"+//done
+    				"KKKKKK..AAAAAAAA..+CCCCC\n"+//done
+    				"KKKKKK..+AAAAAA+...CCCC.\n"+//done
+    				".KKKK+..AAAAAAAA........\n"+//done
+    				"........A+AAAA+A........\n"+//done
+    				"..................BBBBBB\n"+//done
+    				"DDDDDDDD..........+BBBBB\n"+
+    				"DDDDDDDD..........BBBBBB\n"+
+    				"DDDDDDD+..........BBBBBB\n"+
+    				"DDDDDDDD..........BBBB+B\n"+
+    				"DDDDDDDD................\n"+
+    				"DDDDDDDD..........LL+LL.\n"+
+    				"DDDDDD+D.........LLLLLLL\n"+
+    				".................+LLLLLL\n"+
+    				".................LLLLLLL\n"+
+    				".........HH++HH...LLLLL.\n"+
+    				"OOOOOO+..HHHHHH.........\n"+
+    				"OOOOOOO..HHHHH+.........\n"+
+    				"OOOOOOO..HHHHHH..+SSSSSS\n"+
+    				"OOOOOOO..HHHHHH..SSSSSSS\n"+
+    				"OOOOOOO..HHHHHH..SSSSSSS\n"+
+    				"OOOOOO...HHHHHH...SSSSSS\n";
+    	StringBuilder output = new StringBuilder();
+    	// Board row 1
+    	int x = 0;
+    	while (x < 25) {
+    		output.append(board[x][0].toString());
+    		x ++;
+    	}
+    	output.append("\n");
+    	// Board row 2
+    	output.append("KKKKKK");
+    	x = 6;
+    	while (x < 10) {
+    		output.append(board[x][1].toString());
+    		x ++;
+    	}
+    	output.append("AAAA");
+    	x = 14;
+    	while (14 < 18) {
+    		output.append(board[x][1].toString());
+    		x ++;
+    	}
+    	output.append("CCCCCC\n");
+    	// Board row 3
+    	output.append(kitchen.toString(2));
+    	x = 6;
+    	while (x < 8) {
+    		output.append(board[x][2].toString());
+    		x ++;
+    	}
+    	output.append(ballroom.toString(2));
+    	x = 16;
+    	while (x < 18) {
+    		output.append(board[x][2].toString());
+    		x ++;
+    	}
+    	output.append(conservatory.toString(2));
+    	output.append("\n");
+    	// Board row 4
+    	output.append(kitchen.toString(3));
+    	x = 6;
+    	while (x < 8) {
+    		output.append(board[x][3].toString());
+    		x ++;
+    	}
+    	output.append(ballroom.toString(3));
+    	x = 16;
+    	while (x < 18) {
+    		output.append(board[x][3].toString());
+    		x ++;
+    	}
+    	output.append(conservatory.toString(3));
+    	output.append("\n");
+    	// Board row 5
+    	output.append("K    K");
+    	x = 6;
+    	while (x < 8) {
+    		output.append(board[x][4].toString());
+    		x ++;
+    	}
+    	output.append("A      A");
+    	x = 16;
+    	while (x < 18) {
+    		output.append(board[x][4].toString());
+    		x ++;
+    	}
+    	output.append("+    C\n");
+    	// Board row 6
+    	output.append("K    K");
+    	x = 6;
+    	while (x < 8) {
+    		output.append(board[x][5].toString());
+    		x ++;
+    	}
+    	output.append("+      +");
+    	x = 16;
+    	while (x < 19) {
+    		output.append(board[x][5].toString());
+    		x ++;
+    	}
+    	output.append("CCCC");
+    	output.append(board[24][5].toString());
+    	output.append("\n");
+    	// Board row 7
+    	output.append(board[0][6].toString());
+    	output.append("KKKK+");
+    	x = 6;
+    	while (x < 8) {
+    		output.append(board[x][6].toString());
+    		x ++;
+    	}
+    	output.append("A      A");
+    	x = 16;
+    	while (x < 25) {
+    		output.append(board[x][6].toString());
+    		x ++;
+    	}
+    	output.append("\n");
+    	// Board row 8
+    	x = 0;
+    	while (x < 8) {
+    		output.append(board[x][7].toString());
+    		x ++;
+    	}
+    	output.append("A+AAAA+A");
+    	x = 16;
+    	while (x < 25) {
+    		output.append(board[x][7].toString());
+    		x ++;
+    	}
+    	output.append("\n");
+    	// Board row 9
+    	x = 0;
+    	while (x < 18) {
+    		output.append(board[x][8].toString());
+    		x ++;
+    	}
+    	output.append("BBBBBB\n");
+    	// Board row 10
+    	output.append("DDDDDDDD");
+    	
+    }
 	/**
      * toString method to print out board text
      * */
