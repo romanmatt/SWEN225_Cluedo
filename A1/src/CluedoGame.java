@@ -126,7 +126,6 @@ public class CluedoGame {
                         }
                 }
                 activePlayers.add(player);
-                takeTurn(player);
                 i++;
                 }
                 else{
