@@ -652,7 +652,7 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
     	output.append("AAAA");
     	x = 14;
-    	while (14 < 18) {
+    	while (x < 18) {
     		output.append(board[x][1].toString());
     		x ++;
     	}
