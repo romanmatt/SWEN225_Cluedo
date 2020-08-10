@@ -779,13 +779,47 @@ public void moveCharacter(CharacterType c, RoomType r) {
 	output.append("DDDDDDDD");
 	x = 8;
     	while (x < 25) {
-    		output.append(board[x][12].toString());
+    		output.append(board[x][13].toString());
     		x ++;
     	}
 		
 	// Board row 15
-		
+	output.append("DDDDDDDD");
+	x = 8;
+    	while (x < 18) {
+    		output.append(board[x][14].toString());
+    		x ++;
+    	}
+	output.append("LL+LL");
+	output.append(board[24][14].toString());
     	
+	// Board row 16	
+	output.append("DDDDDD+D");
+	x = 8;
+	while (x < 17) {
+    		output.append(board[x][15].toString());
+    		x ++;
+    	}
+	output.append("LLLLLLL");
+		
+	// Board row 17
+	x = 0;
+	while (x < 17) {
+    		output.append(board[x][16].toString());
+    		x ++;
+    	}	
+	output.append("+LLLLLL");	
+		
+	// Board row 18
+	x = 0;
+	while (x < 17) {
+    		output.append(board[x][17].toString());
+    		x ++;
+    	}	
+	output.append("LLLLLLL");
+		
+	// Board row 19
+		
     }
 	/**
      * toString method to print out board text
