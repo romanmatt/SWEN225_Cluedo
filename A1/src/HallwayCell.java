@@ -49,6 +49,10 @@ public class HallwayCell implements Cell {
 		return null;
 	}
 	
+	/**
+	 * Return a dot if unoccupied
+	 * Return player token if occupied
+	 */
 	public String toString(){
 		
 	}
