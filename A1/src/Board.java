@@ -740,7 +740,24 @@ public void moveCharacter(CharacterType c, RoomType r) {
     	}
     	output.append("BBBBBB\n");
     	// Board row 10
+	output.append("DDDDDDDD");
+	x = 8;
+    	while (x < 18) {
+    		output.append(board[x][8].toString());
+    		x ++;
+    	}
+	output.append("+BBBBB");
+		
+	// Board row 11
     	output.append("DDDDDDDD");
+	x = 8;
+    	while (x < 18) {
+    		output.append(board[x][8].toString());
+    		x ++;
+    	}
+	output.append("BBBBBB");
+		
+	// Board row 12
     	
     }
 	/**
