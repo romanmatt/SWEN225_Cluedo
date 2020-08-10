@@ -43,23 +43,24 @@ class CharacterCard implements Card {
     
     /** To String */
     public String toString(){
-        if(getCharacter() instanceof CharacterType.MISSSCARLETT){
+        if(getCharacter().equals(CharacterType.MISSSCARLETT)){
             return "Miss Scarlett";
         }
-        if(getCharacter() instanceof CharacterType.COLONELMUSTARD){
+        if(getCharacter().equals(CharacterType.COLONELMUSTARD)){
             return "Colonel Mustard";
         }
-        if(getCharacter() instanceof CharacterType.MRSWHITE){
+        if(getCharacter().equals(CharacterType.MRSWHITE)){
             return "Mrs. White";
         }
-        if(getCharacter() instanceof CharacterType.MRGREEN){
+        if(getCharacter().equals(CharacterType.MRGREEN)){
             return "Mr. Green";
         }
-        if(getCharacter() instanceof CharacterType.MRSPEACOCK){
+        if(getCharacter().equals(CharacterType.MRSPEACOCK)){
             return "Mrs. Peacock";
         }
-        if(getCharacter() instanceof CharacterType.PROFESSORPLUM){
+        if(getCharacter().equals(CharacterType.PROFESSORPLUM)){
             return "Professor Plum";
         }
+        return "";
     }
 }
