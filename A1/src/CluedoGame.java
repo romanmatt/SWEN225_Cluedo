@@ -78,41 +78,36 @@ public class CluedoGame {
      * @return false
      * */
     private boolean isInputValid(String str){
-        int num=0;
         char token[] = str.toUpperCase().toCharArray();
         for(int i =0; i<token.length; i++){
             if(i==token.length-1 || token[i+1]==' '){
+
                 Player player;
+
                 //Check to see what token is in input
                 //Scarlett
                 if(token[i]=='R'){
                     player = new Player(CharacterType.MISSSCARLETT);
-                    num++;
                 }
                 //Mustard
                 else if(token[i]=='M'){
                     player = new Player(CharacterType.COLONELMUSTARD);
-                    num++;
                 }
                 //White
                 else if(token[i]=='W'){
                     player = new Player(CharacterType.MRSWHITE);
-                    num++;
                 }
                 //Green
                 else if(token[i]=='G'){
                     player = new Player(CharacterType.MRGREEN);
-                    num++;
                 }
                 //Peacock
                 else if(token[i]=='E'){
                     player = new Player(CharacterType.MRSPEACOCK);
-                    num++;
                 }
                 //Plum
                 else if(token[i]=='P'){
                     player = new Player(CharacterType.PROFESSORPLUM);
-                    num++;
                 }
                 else{
                     System.out.print("ERROR: INVALID INPUT./n");
@@ -134,16 +129,9 @@ public class CluedoGame {
                     return false;
                 }
             }
-        //check if count is less than 3 or greater than 6
-        if(num <=6 && num >= 3){
-            return true;
-        } else {
-            System.out.println("ERROR: MUST HAVE AT LEAST 3-6 PLAYERS. YOU ONLY PUT " +
-                    num +"PLAYERS. PLEASE TRY AGAIN.\n");
-            return false;
-        }
-
+        return true;
     }
+
     public boolean accuse(Accusation accusation) {
         if (accusation.accusedRoom == solutionRoom && accusation.accusedWeapon == solutionWeapon && accusation.accusedCharacter == solutionCharacter) {
             return true;
@@ -307,7 +295,7 @@ public class CluedoGame {
                     Scanner s = new Scanner(System.in);
                     int chosenCharacter = s.nextInt();
                     if (chosenCharacter == 1) {
-                    	suggestedCharacter = CharacterType.MISSSCARLET;
+                    	suggestedCharacter = CharacterType.MISSSCARLETT;
                        	validChar = true;
                     } else if (chosenCharacter == 2) {
                        	suggestedCharacter = CharacterType.COLONELMUSTARD;
@@ -392,7 +380,7 @@ public class CluedoGame {
                     Scanner s = new Scanner(System.in);
                     int chosenCharacter = s.nextInt();
                     if (chosenCharacter == 1) {
-                    	accusedCharacter = CharacterType.MISSSCARLET;
+                    	accusedCharacter = CharacterType.MISSSCARLETT;
                        	validChar = true;
                     } else if (chosenCharacter == 2) {
                     	accusedCharacter = CharacterType.COLONELMUSTARD;
@@ -464,12 +452,12 @@ public class CluedoGame {
     	ArrayList<RoomCard> roomDeck = new ArrayList<RoomCard>();
     	roomDeck.add(new RoomCard(RoomType.BALLROOM));
     	roomDeck.add(new RoomCard(RoomType.CONSERVATORY));
-    	roomDeck.add(new RoomCard(RoomType.BILLIARD));
+    	roomDeck.add(new RoomCard(RoomType.BILLIARDROOM));
     	roomDeck.add(new RoomCard(RoomType.LIBRARY));
     	roomDeck.add(new RoomCard(RoomType.STUDY));
     	roomDeck.add(new RoomCard(RoomType.HALL));
     	roomDeck.add(new RoomCard(RoomType.LOUNGE));
-    	roomDeck.add(new RoomCard(RoomType.DINING));
+    	roomDeck.add(new RoomCard(RoomType.DININGROOM));
     	roomDeck.add(new RoomCard(RoomType.KITCHEN));
     	RoomCard murderRoom = roomDeck.get(new Random().nextInt(roomDeck.size()));
     	roomDeck.remove(murderRoom);
@@ -487,7 +475,7 @@ public class CluedoGame {
     	solutionWeapon = murderWeapon.getWeapon();
     	remainingDeck.addAll(weaponDeck);
     	ArrayList<CharacterCard> characterDeck = new ArrayList<CharacterCard>();
-    	characterDeck.add(new CharacterCard(CharacterType.MISSSCARLET));
+    	characterDeck.add(new CharacterCard(CharacterType.MISSSCARLETT));
     	characterDeck.add(new CharacterCard(CharacterType.COLONELMUSTARD));
     	characterDeck.add(new CharacterCard(CharacterType.MRSWHITE));
     	characterDeck.add(new CharacterCard(CharacterType.MRGREEN));
@@ -508,7 +496,7 @@ public class CluedoGame {
     
     public void setupPlayers() {
     	for (Player p : activePlayers) {
-    		if (p.getName() == CharacterType.MISSSCARLET) {
+    		if (p.getName() == CharacterType.MISSSCARLETT) {
     			((HallwayCell) board.board[7][23]).placePlayer(p);
     		}
     		if (p.getName() == CharacterType.COLONELMUSTARD) {
