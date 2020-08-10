@@ -71,43 +71,48 @@ public class CluedoGame {
         return input;
     }
 
-    /**
+   /**
      * Helper Method for userInput()
      * called isInputValid() which goes through
      * the string input
      * @return false
      * */
     private boolean isInputValid(String str){
+        int num=0;
         char token[] = str.toUpperCase().toCharArray();
         for(int i =0; i<token.length; i++){
             if(i==token.length-1 || token[i+1]==' '){
-
                 Player player;
-
                 //Check to see what token is in input
                 //Scarlett
                 if(token[i]=='R'){
                     player = new Player(CharacterType.MISSSCARLETT);
+                    num++;
                 }
                 //Mustard
                 else if(token[i]=='M'){
                     player = new Player(CharacterType.COLONELMUSTARD);
+                    num++;
                 }
                 //White
                 else if(token[i]=='W'){
                     player = new Player(CharacterType.MRSWHITE);
+                    num++;
                 }
                 //Green
                 else if(token[i]=='G'){
                     player = new Player(CharacterType.MRGREEN);
+                    num++;
                 }
                 //Peacock
                 else if(token[i]=='E'){
                     player = new Player(CharacterType.MRSPEACOCK);
+                    num++;
                 }
                 //Plum
                 else if(token[i]=='P'){
                     player = new Player(CharacterType.PROFESSORPLUM);
+                    num++;
                 }
                 else{
                     System.out.print("ERROR: INVALID INPUT./n");
@@ -129,7 +134,15 @@ public class CluedoGame {
                     return false;
                 }
             }
-        return true;
+        //check if count is less than 3 or greater than 6
+        if(num <=6 && num >= 3){
+            return true;
+        } else {
+            System.out.println("ERROR: MUST HAVE AT LEAST 3-6 PLAYERS. YOU ONLY PUT " +
+                    num +"PLAYERS. PLEASE TRY AGAIN.\n");
+            return false;
+        }
+
     }
 
     public boolean accuse(Accusation accusation) {
