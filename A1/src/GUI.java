@@ -9,6 +9,10 @@ public abstract class GUI {
   
   private void initialise(){
     
+    JButton suggest = new JButton("Suggest");	  
+    JButton accuse = new JButton("Accuse");
+    JButton quit = new JButton("Quit");
+    
   }
   
 }
